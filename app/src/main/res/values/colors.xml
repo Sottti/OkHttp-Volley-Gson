@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="blue_grey_500">#607D8B</color>
+    <color name="blue_grey_700">#455A64</color>
+    <color name="grey_200">#EEEEEE</color>
+
+    <color name="light_theme_default_background">@color/grey_200</color>
+    <color name="primary">@color/blue_grey_500</color>
+    <color name="primaryDark">@color/blue_grey_700</color>
+</resources>
