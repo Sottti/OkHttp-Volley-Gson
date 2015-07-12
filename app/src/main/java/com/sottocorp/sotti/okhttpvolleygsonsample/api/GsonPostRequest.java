@@ -1,6 +1,5 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.api;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Response;
@@ -11,7 +10,6 @@ import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
-import java.util.Map;
 
 /**
  * Convert a JsonElement into a list of objects or an object with Google Gson.

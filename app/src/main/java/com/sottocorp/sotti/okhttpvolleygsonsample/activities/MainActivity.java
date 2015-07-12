@@ -16,7 +16,7 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.R;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private Button mJSONObjectSample, mJSONArraySample, mImageLoadingSample;
+    private Button mJSONObjectSample, mJSONArraySample, mNetworkImageView, mImageRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,11 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mJSONObjectSample = (Button) findViewById(R.id.json_object);
         mJSONArraySample = (Button) findViewById(R.id.json_array);
-        mImageLoadingSample = (Button) findViewById(R.id.image_loading);
+        mNetworkImageView = (Button) findViewById(R.id.network_image_view);
+        mImageRequest = (Button) findViewById(R.id.image_request);
 
         mJSONObjectSample.setOnClickListener(this);
         mJSONArraySample.setOnClickListener(this);
-        mImageLoadingSample.setOnClickListener(this);
+        mNetworkImageView.setOnClickListener(this);
+        mImageRequest.setOnClickListener(this);
     }
 
     @Override
@@ -46,9 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             startActivity(new Intent(this, JSONArrayActivity.class));
         }
-        else if (view == mImageLoadingSample)
+        else if (view == mNetworkImageView)
         {
-            startActivity(new Intent(this, ImageLoading.class));
+            startActivity(new Intent(this, NetworkImageView.class));
+        }
+        else if (view == mImageRequest)
+        {
+            startActivity(new Intent(this, ImageRequestActivity.class));
         }
     }
 }

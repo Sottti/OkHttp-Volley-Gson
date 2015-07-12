@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
-import com.android.volley.toolbox.ImageRequest;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
 import com.sottocorp.sotti.okhttpvolleygsonsample.adapters.ImageLoadingARecyclerViewAdapter;
 
@@ -13,13 +13,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Demonstrates how to load images
+ * Demonstrates how to load images using {@link com.android.volley.toolbox.NetworkImageView}
  *
  * @author https://plus.google.com/+PabloCostaTirado/about
  */
-public class ImageLoading extends AppCompatActivity
+public class NetworkImageView extends AppCompatActivity
 {
-    private final static List<String> mImages = Arrays.asList
+    private final static List<String> sIMAGES = Arrays.asList
     (
             "https://lh3.googleusercontent.com/X7LeBu-pcZT072M2mtywDQWCKuqTMjdCWrrAaofQI7_6=w950-h713-no",
             "https://lh3.googleusercontent.com/srl6bOcG8KT0SdlEtkgxvGJOjKh22kWLBLrS25McOUsm=w950-h713-no",
@@ -37,8 +37,10 @@ public class ImageLoading extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_loading);
 
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+
         final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new ImageLoadingARecyclerViewAdapter(mImages));
+        mRecyclerView.setAdapter(new ImageLoadingARecyclerViewAdapter(sIMAGES));
     }
 }

@@ -4,12 +4,14 @@
 
     <string name="yoda_sentence">Hard, networking is.</string>
 
-    <string name="json_object">JSON Object</string>
-    <string name="json_array">JSON Array</string>
-    <string name="image_loading">Image loading</string>
     <string name="activity_title_JSON_object">JSON Object</string>
     <string name="activity_title_JSON_array">JSON Array</string>
-    <string name="activity_title_image_loading">Image Loading</string>
+    <string name="activity_title_network_image_view">Network Image View</string>
+    <string name="activity_title_image_request">Image Request</string>
+    <string name="json_object">JSON Object</string>
+    <string name="json_array">JSON Array</string>
+    <string name="network_image_view">Network Image View</string>
+    <string name="image_request">Image Request</string>
 
     <string name="error_text">Something went wrong</string>
 

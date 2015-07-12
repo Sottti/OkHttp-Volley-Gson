@@ -32,8 +32,12 @@
             android:label="@string/activity_title_JSON_array"/>
 
         <activity
-            android:name=".activities.ImageLoading"
-            android:label="@string/image_loading"/>
+            android:name=".activities.NetworkImageView"
+            android:label="@string/activity_title_network_image_view"/>
+
+        <activity
+            android:name=".activities.ImageRequestActivity"
+            android:label="@string/activity_title_image_request"/>
 
     </application>
 

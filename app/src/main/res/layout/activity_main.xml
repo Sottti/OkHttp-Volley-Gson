@@ -60,11 +60,18 @@
             android:text="@string/json_array"/>
 
         <Button
-            android:id="@+id/image_loading"
+            android:id="@+id/network_image_view"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/image_loading"/>
+            android:text="@string/network_image_view"/>
+
+        <Button
+            android:id="@+id/image_request"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/image_request"/>
 
     </LinearLayout>
 
