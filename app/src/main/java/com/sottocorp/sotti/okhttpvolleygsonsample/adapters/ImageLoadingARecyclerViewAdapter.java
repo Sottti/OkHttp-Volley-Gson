@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ImageLoadingARecyclerViewAdapter extends RecyclerView.Adapter
 {
-    private List<String> mImages;
+    private final List<String> mImages;
 
     public ImageLoadingARecyclerViewAdapter(List<String> images)
     {

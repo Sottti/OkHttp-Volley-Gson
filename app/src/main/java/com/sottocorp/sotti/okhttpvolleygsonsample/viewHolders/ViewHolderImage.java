@@ -14,7 +14,7 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
  */
 public class ViewHolderImage extends RecyclerView.ViewHolder
 {
-    private NetworkImageView mNetworkImageView;
+    private final NetworkImageView mNetworkImageView;
 
     public ViewHolderImage(View itemView)
     {

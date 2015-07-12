@@ -23,7 +23,6 @@ public class GsonPostRequest<T> extends JsonRequest<T>
     private final Gson gson;
     private final Type type;
     private final Response.Listener<T> listener;
-    private long requestTime;
 
     /**
      * Make a GET request and return a parsed object from JSON.

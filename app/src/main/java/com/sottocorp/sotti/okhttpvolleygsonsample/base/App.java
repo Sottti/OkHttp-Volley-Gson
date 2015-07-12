@@ -66,7 +66,7 @@ public class App extends Application
      *
      * @param request is the request to add to the Volley queue
      */
-    public static void addRequest(Request<?> request)
+    private static void addRequest(Request<?> request)
     {
         getInstance().getVolleyRequestQueue().add(request);
     }
