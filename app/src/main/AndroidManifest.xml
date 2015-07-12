@@ -32,7 +32,7 @@
             android:label="@string/activity_title_JSON_array"/>
 
         <activity
-            android:name=".activities.NetworkImageView"
+            android:name=".activities.NetworkImageViewActivity"
             android:label="@string/activity_title_network_image_view"/>
 
         <activity

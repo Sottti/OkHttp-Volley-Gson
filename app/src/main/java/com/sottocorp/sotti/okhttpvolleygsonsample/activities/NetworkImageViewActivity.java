@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author https://plus.google.com/+PabloCostaTirado/about
  */
-public class NetworkImageView extends AppCompatActivity
+public class NetworkImageViewActivity extends AppCompatActivity
 {
     private final static List<String> sIMAGES = Arrays.asList
     (
@@ -35,7 +35,7 @@ public class NetworkImageView extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.image_loading);
+        setContentView(R.layout.network_image_view);
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 

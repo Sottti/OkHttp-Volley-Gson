@@ -28,7 +28,7 @@ public class ImageLoadingARecyclerViewAdapter extends RecyclerView.Adapter
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         final View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.view_holder_image, parent, false);
+                .inflate(R.layout.view_holder_network_image_view, parent, false);
 
         return new ViewHolderImage(view);
     }

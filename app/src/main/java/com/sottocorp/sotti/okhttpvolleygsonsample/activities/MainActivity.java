@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (view == mNetworkImageView)
         {
-            startActivity(new Intent(this, NetworkImageView.class));
+            startActivity(new Intent(this, NetworkImageViewActivity.class));
         }
         else if (view == mImageRequest)
         {
