@@ -13,7 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
 import com.sottocorp.sotti.okhttpvolleygsonsample.api.ApiRequest;
-import com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonRequest;
+import com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonGetRequest;
 import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 import com.sottocorp.sotti.okhttpvolleygsonsample.dataModel.DummyObject;
 
@@ -26,11 +26,11 @@ import java.util.ArrayList;
  */
 public class JSONArrayActivity extends AppCompatActivity
 {
-    private TextView mTitle, mBody, mSecondTitle, mSecondBody;
     private static final String mTAG = "TagTwo";
 
     private ProgressBar mProgressBar;
     private LinearLayout mContent, mErrorView;
+    private TextView mTitle, mBody, mSecondTitle, mSecondBody;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -51,7 +51,7 @@ public class JSONArrayActivity extends AppCompatActivity
         mErrorView = (LinearLayout) findViewById(R.id.error_view);
         mContent = (LinearLayout) findViewById(R.id.content);
 
-        final GsonRequest<ArrayList<DummyObject>> gsonRequest = ApiRequest.getDummyObjectArray
+        final GsonGetRequest<ArrayList<DummyObject>> gsonGetRequest = ApiRequest.getDummyObjectArray
         (
                 new Response.Listener<ArrayList<DummyObject>>()
                  {
@@ -77,7 +77,7 @@ public class JSONArrayActivity extends AppCompatActivity
                 }
         );
 
-        App.addRequest(gsonRequest, mTAG);
+        App.addRequest(gsonGetRequest, mTAG);
     }
 
     @Override

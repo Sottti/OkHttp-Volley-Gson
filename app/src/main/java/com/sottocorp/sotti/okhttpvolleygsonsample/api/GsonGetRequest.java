@@ -14,9 +14,11 @@ import java.lang.reflect.Type;
 /**
  * Convert a JsonElement into a list of objects or an object with Google Gson.
  *
+ * The JsonElement is the response object for a {@link com.android.volley.Request.Method} GET call.
+ *
  * @author pablo@crowdscores.com
  */
-public class GsonRequest<T> extends Request<T>
+public class GsonGetRequest<T> extends Request<T>
 {
     private final Gson gson;
     private final Type type;
@@ -30,7 +32,7 @@ public class GsonRequest<T> extends Request<T>
      * @param listener is the listener for the right answer
      * @param errorListener  is the listener for the wrong answer
      */
-    public GsonRequest
+    public GsonGetRequest
     (String url, Type type, Gson gson,
      Response.Listener<T> listener, Response.ErrorListener errorListener)
     {

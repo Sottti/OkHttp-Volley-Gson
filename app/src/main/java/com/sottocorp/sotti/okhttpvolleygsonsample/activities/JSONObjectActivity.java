@@ -13,7 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
 import com.sottocorp.sotti.okhttpvolleygsonsample.api.ApiRequest;
-import com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonRequest;
+import com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonGetRequest;
 import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 import com.sottocorp.sotti.okhttpvolleygsonsample.dataModel.DummyObject;
 
@@ -45,7 +45,7 @@ public class JSONObjectActivity extends AppCompatActivity
         mErrorView = (LinearLayout) findViewById(R.id.error_view);
         mContent = (LinearLayout) findViewById(R.id.content);
 
-        final GsonRequest<DummyObject> gsonRequest = ApiRequest.getDummyObject
+        final GsonGetRequest<DummyObject> gsonGetRequest = ApiRequest.getDummyObject
                 (new Response.Listener<DummyObject>()
                  {
                      @Override
@@ -70,7 +70,7 @@ public class JSONObjectActivity extends AppCompatActivity
                         }
                 );
 
-        App.addRequest(gsonRequest, mTAG);
+        App.addRequest(gsonGetRequest, mTAG);
     }
 
     @Override
