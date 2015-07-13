@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
  *
  * The JsonElement is the response object for a {@link com.android.volley.Request.Method} POST call.
  *
- * @author pablo@crowdscores.com
+ * @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class GsonPostRequest<T> extends JsonRequest<T>
 {
