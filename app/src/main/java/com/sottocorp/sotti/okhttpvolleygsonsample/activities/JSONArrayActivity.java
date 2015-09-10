@@ -1,6 +1,7 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.activities;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
@@ -12,21 +13,19 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
-import com.sottocorp.sotti.okhttpvolleygsonsample.api.ApiRequest;
-import com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonGetRequest;
 import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 import com.sottocorp.sotti.okhttpvolleygsonsample.dataModel.DummyObject;
+import com.sottocorp.sotti.okhttpvolleygsonsample.network.ApiRequests;
+import com.sottocorp.sotti.okhttpvolleygsonsample.network.GsonGetRequest;
 
 import java.util.ArrayList;
 
 /**
  * Demonstrates how to make a JSON Object request
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class JSONArrayActivity extends AppCompatActivity
 {
-    private static final String mTAG = "TagTwo";
+    private static final String sTag = "tagTwo";
 
     private ProgressBar mProgressBar;
     private LinearLayout mContent, mErrorView;
@@ -40,6 +39,11 @@ public class JSONArrayActivity extends AppCompatActivity
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mTitle = (TextView) findViewById(R.id.my_title);
         mBody = (TextView) findViewById(R.id.my_body);
@@ -51,39 +55,36 @@ public class JSONArrayActivity extends AppCompatActivity
         mErrorView = (LinearLayout) findViewById(R.id.error_view);
         mContent = (LinearLayout) findViewById(R.id.content);
 
-        final GsonGetRequest<ArrayList<DummyObject>> gsonGetRequest = ApiRequest.getDummyObjectArray
-        (
-                new Response.Listener<ArrayList<DummyObject>>()
-                 {
-                     @Override
-                     public void onResponse(ArrayList<DummyObject> dummyObjectArrayList)
-                     {
-                         // Deal with the DummyObject here
-                         mProgressBar.setVisibility(View.GONE);
-                         mContent.setVisibility(View.VISIBLE);
-                         setData(dummyObjectArrayList);
-                     }
-                 }
-                ,
-                new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error)
-                    {
-                        // Deal with the error here
-                        mProgressBar.setVisibility(View.GONE);
-                        mErrorView.setVisibility(View.VISIBLE);
-                    }
-                }
-        );
+        final GsonGetRequest<ArrayList<DummyObject>> gsonGetRequest =
+                ApiRequests.getDummyObjectArray
+                        (
+                                new Response.Listener<ArrayList<DummyObject>>() {
+                                    @Override
+                                    public void onResponse(ArrayList<DummyObject> dummyObjectArrayList) {
+                                        // Deal with the DummyObject here
+                                        mProgressBar.setVisibility(View.GONE);
+                                        mContent.setVisibility(View.VISIBLE);
+                                        setData(dummyObjectArrayList);
+                                    }
+                                }
+                                ,
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        // Deal with the error here
+                                        mProgressBar.setVisibility(View.GONE);
+                                        mErrorView.setVisibility(View.VISIBLE);
+                                    }
+                                }
+                        );
 
-        App.addRequest(gsonGetRequest, mTAG);
+        App.addRequest(gsonGetRequest, sTag);
     }
 
     @Override
     protected void onStop()
     {
-        App.cancelAllRequests(mTAG);
+        App.cancelAllRequests(sTag);
 
         super.onStop();
     }
@@ -93,7 +94,7 @@ public class JSONArrayActivity extends AppCompatActivity
      *
      * @param dummyObjectArrayList is the object's array to get the data from
      */
-    private void setData(ArrayList<DummyObject> dummyObjectArrayList)
+    private void setData(@NonNull final ArrayList<DummyObject> dummyObjectArrayList)
     {
         mTitle.setText(dummyObjectArrayList.get(0).getTitle());
         mBody.setText(dummyObjectArrayList.get(0).getBody());

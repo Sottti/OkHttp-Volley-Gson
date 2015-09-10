@@ -12,8 +12,6 @@ import java.lang.reflect.Type;
  * Deserializer for a dummy object
  *
  * Convert a JsonObject into a Dummy object.
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class DummyObjectDeserializer implements JsonDeserializer<DummyObject>
 {

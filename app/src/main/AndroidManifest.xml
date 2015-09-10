@@ -9,6 +9,7 @@
     <application
         android:name=".base.App"
         android:allowBackup="true"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -25,19 +26,23 @@
 
         <activity
             android:name=".activities.JSONObjectActivity"
-            android:label="@string/activity_title_JSON_object"/>
+            android:label="@string/activity_title_JSON_object"
+            android:parentActivityName=".activities.MainActivity"/>
 
         <activity
             android:name=".activities.JSONArrayActivity"
-            android:label="@string/activity_title_JSON_array"/>
+            android:label="@string/activity_title_JSON_array"
+            android:parentActivityName=".activities.MainActivity"/>
 
         <activity
             android:name=".activities.NetworkImageViewActivity"
-            android:label="@string/activity_title_network_image_view"/>
+            android:label="@string/activity_title_network_image_view"
+            android:parentActivityName=".activities.MainActivity"/>
 
         <activity
             android:name=".activities.ImageRequestActivity"
-            android:label="@string/activity_title_image_request"/>
+            android:label="@string/activity_title_image_request"
+            android:parentActivityName=".activities.MainActivity"/>
 
     </application>
 

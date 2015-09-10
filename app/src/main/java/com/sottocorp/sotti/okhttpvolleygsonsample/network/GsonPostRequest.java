@@ -1,10 +1,12 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.api;
+package com.sottocorp.sotti.okhttpvolleygsonsample.network;
+
+import android.support.annotation.NonNull;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.JsonRequest;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
@@ -12,13 +14,10 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 
 /**
- * Convert a JsonElement into a list of objects or an object with Google Gson.
- *
- * The JsonElement is the response object for a {@link com.android.volley.Request.Method} GET call.
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
+ * Makes a post request and converts the response from JsonElement into a
+ * list of objects/object using with Google Gson.
  */
-public class GsonGetRequest<T> extends Request<T>
+public class GsonPostRequest<T> extends JsonRequest<T>
 {
     private final Gson gson;
     private final Type type;
@@ -32,11 +31,17 @@ public class GsonGetRequest<T> extends Request<T>
      * @param listener is the listener for the right answer
      * @param errorListener  is the listener for the wrong answer
      */
-    public GsonGetRequest
-    (String url, Type type, Gson gson,
-     Response.Listener<T> listener, Response.ErrorListener errorListener)
+    public GsonPostRequest
+    (
+            @NonNull final String url,
+            @NonNull final String body,
+            @NonNull final Type type,
+            @NonNull final Gson gson,
+            @NonNull final Response.Listener<T> listener,
+            @NonNull final Response.ErrorListener errorListener
+    )
     {
-        super(Method.GET, url, errorListener);
+        super(Method.POST, url, body, listener, errorListener);
 
         this.gson = gson;
         this.type = type;

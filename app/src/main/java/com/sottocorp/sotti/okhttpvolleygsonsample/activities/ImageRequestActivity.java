@@ -15,13 +15,11 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Demonstrates how to load images using {@link com.android.volley.toolbox.ImageRequest}
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
+ * Demonstrates how to load images using {@link ImageRequest}
  */
 public class ImageRequestActivity extends AppCompatActivity
 {
-    private final static String mImageUrl = "https://goo.gl/XOXAXG";
+    private final static String sImageUrl = "https://goo.gl/XOXAXG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,14 +29,20 @@ public class ImageRequestActivity extends AppCompatActivity
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         final CircleImageView circleImageView =
                 (CircleImageView) findViewById(R.id.circularImageView);
 
         // Retrieves an image specified by the URL, displays it in the UI.
-        final com.android.volley.toolbox.ImageRequest imageRequest =
+        // In this example the image is NOT resized.
+        final ImageRequest imageRequest =
                 new ImageRequest
                 (
-                        mImageUrl,
+                        sImageUrl,
                         new Response.Listener<Bitmap>()
                         {
                             @Override

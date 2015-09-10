@@ -1,4 +1,6 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.api;
+package com.sottocorp.sotti.okhttpvolleygsonsample.network;
+
+import android.support.annotation.NonNull;
 
 import com.android.volley.Response;
 import com.google.gson.Gson;
@@ -12,12 +14,9 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.dataModel.DummyObjectDeseriali
 import java.util.ArrayList;
 
 /**
- * Request to API
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
- *
+ * Requests to the API
  */
-public class ApiRequest
+public class ApiRequests
 {
     /**
      * Returns a dummy object
@@ -25,12 +24,12 @@ public class ApiRequest
      * @param listener is the listener for the correct answer
      * @param errorListener is the listener for the error response
      *
-     * @return @return {@link com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonGetRequest}
+     * @return {@link GsonGetRequest}
      */
     public static GsonGetRequest<DummyObject> getDummyObject
     (
-            Response.Listener<DummyObject> listener,
-            Response.ErrorListener errorListener
+            @NonNull final Response.Listener<DummyObject> listener,
+            @NonNull final Response.ErrorListener errorListener
     )
     {
         final String url = "http://www.mocky.io/v2/55973508b0e9e4a71a02f05f";
@@ -55,12 +54,12 @@ public class ApiRequest
      * @param listener is the listener for the correct answer
      * @param errorListener is the listener for the error response
      *
-     * @return {@link com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonGetRequest}
+     * @return {@link GsonGetRequest}
      */
     public static GsonGetRequest<ArrayList<DummyObject>> getDummyObjectArray
     (
-            Response.Listener<ArrayList<DummyObject>> listener,
-            Response.ErrorListener errorListener
+            @NonNull final Response.Listener<ArrayList<DummyObject>> listener,
+            @NonNull final Response.ErrorListener errorListener
     )
     {
         final String url = "http://www.mocky.io/v2/5597d86a6344715505576725";
@@ -81,19 +80,19 @@ public class ApiRequest
 
 
     /**
-     * An example call (not used in this example app) to demonstrate how to do a Volley POST call
+     * An example call (not used in this app example) to demonstrate how to do a Volley POST call
      * and parse the response with Gson.
      *
      * @param listener is the listener for the success response
      * @param errorListener is the listener for the error response
      *
-     * @return {@link com.sottocorp.sotti.okhttpvolleygsonsample.api.GsonPostRequest}
+     * @return {@link GsonPostRequest}
      */
     public static GsonPostRequest getDummyObjectArrayWithPost
-            (
-                    Response.Listener<DummyObject> listener,
-                    Response.ErrorListener errorListener
-            )
+    (
+            @NonNull final Response.Listener<DummyObject> listener,
+            @NonNull final Response.ErrorListener errorListener
+    )
     {
         final String url = "http://PostApiEndpoint";
         final Gson gson = new GsonBuilder()

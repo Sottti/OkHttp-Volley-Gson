@@ -1,5 +1,6 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.viewHolders;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -9,8 +10,6 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 
 /**
  * View holder for a recycler view item holding an image
- *
- * @author @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class ViewHolderImage extends RecyclerView.ViewHolder
 {
@@ -30,7 +29,7 @@ public class ViewHolderImage extends RecyclerView.ViewHolder
      *
      * @param imageUrl is the image Url to get the image
      */
-    public void setData(String imageUrl)
+    public void setData(@NonNull final String imageUrl)
     {
         mNetworkImageView.setImageUrl(imageUrl, App.getInstance().getVolleyImageLoader());
     }

@@ -1,6 +1,7 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.base;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -11,14 +12,12 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.others.OkHttpStack;
 import com.squareup.okhttp.OkHttpClient;
 
 /**
- * Global application singleton mInstance.
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
+ * Global application singleton instance.
  */
 public class App extends Application
 {
-    // Singleton application mInstance
-    private static App mInstance;
+    // Singleton application sInstance
+    private static App sInstance;
 
     // Volley request queue
     private RequestQueue mRequestQueue;
@@ -34,17 +33,15 @@ public class App extends Application
     {
         super.onCreate();
 
-        mInstance = this;
+        sInstance = this;
     }
 
     /**
-     * Returns the application instance
-     *
-     * @return the application instance
+     * @return the application singleton instance
      */
     public static App getInstance()
     {
-        return mInstance;
+        return sInstance;
     }
 
     /**
@@ -64,9 +61,9 @@ public class App extends Application
     /**
      * Adds a request to the Volley request queue
      *
-     * @param request is the request to add to the Volley queue
+     * @param request to be added to the Volley requests queue
      */
-    private static void addRequest(Request<?> request)
+    private static void addRequest(@NonNull final Request<?> request)
     {
         getInstance().getVolleyRequestQueue().add(request);
     }
@@ -77,7 +74,7 @@ public class App extends Application
      * @param request is the request to be added
      * @param tag tag identifying the request
      */
-    public static void addRequest(Request<?> request, String tag)
+    public static void addRequest(@NonNull final Request<?> request, @NonNull final String tag)
     {
         request.setTag(tag);
         addRequest(request);
@@ -88,7 +85,7 @@ public class App extends Application
      *
      * @param tag associated with the Volley requests to be cancelled
      */
-    public static void cancelAllRequests(String tag)
+    public static void cancelAllRequests(@NonNull final String tag)
     {
         if (getInstance().getVolleyRequestQueue() != null)
         {
@@ -124,7 +121,7 @@ public class App extends Application
     {
         if (mLruBitmapCache == null)
         {
-            mLruBitmapCache = new LruBitmapCache(mInstance);
+            mLruBitmapCache = new LruBitmapCache(sInstance);
         }
         return mLruBitmapCache;
     }

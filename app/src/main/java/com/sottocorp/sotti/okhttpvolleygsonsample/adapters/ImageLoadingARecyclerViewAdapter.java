@@ -1,5 +1,6 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.adapters;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +13,12 @@ import java.util.List;
 
 /**
  * Adapter for the image loading recycler view
- *
- * @author @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class ImageLoadingARecyclerViewAdapter extends RecyclerView.Adapter
 {
     private final List<String> mImages;
 
-    public ImageLoadingARecyclerViewAdapter(List<String> images)
+    public ImageLoadingARecyclerViewAdapter(@NonNull final List<String> images)
     {
         mImages = images;
     }

@@ -2,6 +2,7 @@ package com.sottocorp.sotti.okhttpvolleygsonsample.others;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.support.annotation.NonNull;
 import android.support.v4.util.LruCache;
 import android.util.DisplayMetrics;
 
@@ -9,12 +10,12 @@ import com.android.volley.toolbox.ImageLoader.ImageCache;
 
 public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCache
 {
-    private LruBitmapCache(int maxSize)
+    private LruBitmapCache(final int maxSize)
     {
         super(maxSize);
     }
 
-    public LruBitmapCache(Context ctx)
+    public LruBitmapCache(@NonNull final Context ctx)
     {
         this(getCacheSize(ctx));
     }
@@ -37,10 +38,14 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCac
         put(url, bitmap);
     }
 
-    // Returns a cache size equal to approximately three screens worth of images.
-    private static int getCacheSize(Context ctx)
+    /**
+     * @param context to get the resources from
+     *
+     * @return a cache size equal to approximately three screens worth of images.
+     */
+    private static int getCacheSize(@NonNull final Context context)
     {
-        final DisplayMetrics displayMetrics = ctx.getResources().
+        final DisplayMetrics displayMetrics = context.getResources().
                 getDisplayMetrics();
         final int screenWidth = displayMetrics.widthPixels;
         final int screenHeight = displayMetrics.heightPixels;

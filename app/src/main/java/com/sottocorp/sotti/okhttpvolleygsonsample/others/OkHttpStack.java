@@ -95,14 +95,14 @@ public class OkHttpStack implements HttpStack
         return response;
     }
 
-    private static HttpEntity entityFromOkHttpResponse(Response r) throws IOException
+    private static HttpEntity entityFromOkHttpResponse(Response response) throws IOException
     {
         BasicHttpEntity entity = new BasicHttpEntity();
-        ResponseBody body = r.body();
+        ResponseBody body = response.body();
 
         entity.setContent(body.byteStream());
         entity.setContentLength(body.contentLength());
-        entity.setContentEncoding(r.header("Content-Encoding"));
+        entity.setContentEncoding(response.header("Content-Encoding"));
 
         if (body.contentType() != null)
         {
@@ -167,9 +167,9 @@ public class OkHttpStack implements HttpStack
         }
     }
 
-    private static ProtocolVersion parseProtocol(final Protocol p)
+    private static ProtocolVersion parseProtocol(final Protocol protocol)
     {
-        switch (p)
+        switch (protocol)
         {
             case HTTP_1_0:
                 return new ProtocolVersion("HTTP", 1, 0);
@@ -184,11 +184,11 @@ public class OkHttpStack implements HttpStack
         throw new IllegalAccessError("Unkwown protocol");
     }
 
-    private static RequestBody createRequestBody(Request r) throws AuthFailureError
+    private static RequestBody createRequestBody(Request request) throws AuthFailureError
     {
-        final byte[] body = r.getBody();
+        final byte[] body = request.getBody();
         if (body == null) return null;
 
-        return RequestBody.create(MediaType.parse(r.getBodyContentType()), body);
+        return RequestBody.create(MediaType.parse(request.getBodyContentType()), body);
     }
 }

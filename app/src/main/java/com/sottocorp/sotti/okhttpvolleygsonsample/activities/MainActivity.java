@@ -11,8 +11,6 @@ import com.sottocorp.sotti.okhttpvolleygsonsample.R;
 
 /**
  * Launches the different samples
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {

@@ -2,7 +2,7 @@
 
     <string name="app_name">Networking I</string>
 
-    <string name="yoda_sentence">Hard, networking is.</string>
+    <string name="yoda_sentence">Hard, networking is</string>
 
     <string name="activity_title_JSON_object">JSON Object</string>
     <string name="activity_title_JSON_array">JSON Array</string>

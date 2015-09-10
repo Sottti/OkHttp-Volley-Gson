@@ -1,9 +1,7 @@
 package com.sottocorp.sotti.okhttpvolleygsonsample.dataModel;
 
 /**
- * Represents a model object
- *
- * @author https://plus.google.com/+PabloCostaTirado/about
+ * Represents a dummy object
  */
 public class DummyObject
 {
