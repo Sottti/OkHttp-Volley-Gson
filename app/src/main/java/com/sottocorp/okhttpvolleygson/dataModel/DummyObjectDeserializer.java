@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.dataModel;
+package com.sottocorp.okhttpvolleygson.dataModel;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

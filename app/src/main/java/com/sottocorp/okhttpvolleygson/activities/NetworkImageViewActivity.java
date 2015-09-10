@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.activities;
+package com.sottocorp.okhttpvolleygson.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.sottocorp.okhttpvolleygson.adapters.ImageLoadingARecyclerViewAdapter;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
-import com.sottocorp.sotti.okhttpvolleygsonsample.adapters.ImageLoadingARecyclerViewAdapter;
 
 import java.util.Arrays;
 import java.util.List;

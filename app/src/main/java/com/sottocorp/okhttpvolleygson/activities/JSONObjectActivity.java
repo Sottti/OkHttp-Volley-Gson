@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.activities;
+package com.sottocorp.okhttpvolleygson.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.sottocorp.okhttpvolleygson.base.App;
+import com.sottocorp.okhttpvolleygson.dataModel.DummyObject;
+import com.sottocorp.okhttpvolleygson.network.ApiRequests;
+import com.sottocorp.okhttpvolleygson.network.GsonGetRequest;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
-import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
-import com.sottocorp.sotti.okhttpvolleygsonsample.dataModel.DummyObject;
-import com.sottocorp.sotti.okhttpvolleygsonsample.network.ApiRequests;
-import com.sottocorp.sotti.okhttpvolleygsonsample.network.GsonGetRequest;
 
 /**
  * Demonstrates how to make a JSON Object request

@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.base;
+package com.sottocorp.okhttpvolleygson.base;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
@@ -7,8 +7,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.sottocorp.sotti.okhttpvolleygsonsample.others.LruBitmapCache;
-import com.sottocorp.sotti.okhttpvolleygsonsample.others.OkHttpStack;
+import com.sottocorp.okhttpvolleygson.others.LruBitmapCache;
+import com.sottocorp.okhttpvolleygson.others.OkHttpStack;
 import com.squareup.okhttp.OkHttpClient;
 
 /**

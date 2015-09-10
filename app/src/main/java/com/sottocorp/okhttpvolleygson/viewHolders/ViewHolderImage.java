@@ -1,12 +1,12 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.viewHolders;
+package com.sottocorp.okhttpvolleygson.viewHolders;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.sottocorp.okhttpvolleygson.base.App;
 import com.sottocorp.sotti.okhttpvolleygsonsample.R;
-import com.sottocorp.sotti.okhttpvolleygsonsample.base.App;
 
 /**
  * View holder for a recycler view item holding an image

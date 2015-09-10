@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample;
+package com.sottocorp.okhttpvolleygson;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

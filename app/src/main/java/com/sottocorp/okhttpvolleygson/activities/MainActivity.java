@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.activities;
+package com.sottocorp.okhttpvolleygson.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

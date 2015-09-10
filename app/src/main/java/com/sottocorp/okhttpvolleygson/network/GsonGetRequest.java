@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.network;
+package com.sottocorp.okhttpvolleygson.network;
 
 import android.support.annotation.NonNull;
 

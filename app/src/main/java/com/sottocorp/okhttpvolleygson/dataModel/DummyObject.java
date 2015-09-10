@@ -1,4 +1,4 @@
-package com.sottocorp.sotti.okhttpvolleygsonsample.dataModel;
+package com.sottocorp.okhttpvolleygson.dataModel;
 
 /**
  * Represents a dummy object
