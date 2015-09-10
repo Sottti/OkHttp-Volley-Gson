@@ -21,7 +21,7 @@
         tools:context=".MainActivity">
 
         <TextView
-            style="@style/TextAppearance.AppCompat.Headline"
+            style="@style/TextAppearance.AppCompat.Display1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -30,38 +30,46 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="160dp"
-            android:layout_margin="@dimen/margin_medium"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:src="@drawable/yoda"
             tools:ignore="ContentDescription" />
 
-        <Button
-            android:id="@+id/json_object"
-            style="@style/Widget.AppCompat.Button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/json_object"/>
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/json_array"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/json_array"/>
+            <Button
+                android:id="@+id/json_object"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/json_object"/>
 
-        <Button
-            android:id="@+id/network_image_view"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/network_image_view"/>
+            <Button
+                android:id="@+id/json_array"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/json_array"/>
 
-        <Button
-            android:id="@+id/image_request"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/image_request"/>
+            <Button
+                android:id="@+id/network_image_view"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/network_image_view"/>
+
+            <Button
+                android:id="@+id/image_request"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/image_request"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -6,5 +6,7 @@
 
     <dimen name="margin_medium">16dp</dimen>
 
+    <dimen name="yoda_height">160dp</dimen>
+
     <dimen name="progress_bar_circular_size">48dp</dimen>
 </resources>
