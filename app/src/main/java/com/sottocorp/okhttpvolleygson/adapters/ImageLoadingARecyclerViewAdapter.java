@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sottocorp.okhttpvolleygson.viewHolders.ViewHolderImage;
-import com.sottocorp.sotti.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygsonsample.R;
 
 import java.util.List;
 

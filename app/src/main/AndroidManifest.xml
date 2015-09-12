@@ -2,7 +2,7 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sottocorp.sotti.okhttpvolleygsonsample" >
+    package="com.sottocorp.okhttpvolleygsonsample" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 

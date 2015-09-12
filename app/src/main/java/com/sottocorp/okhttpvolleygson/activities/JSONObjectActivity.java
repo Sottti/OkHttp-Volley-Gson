@@ -16,7 +16,7 @@ import com.sottocorp.okhttpvolleygson.base.App;
 import com.sottocorp.okhttpvolleygson.dataModel.DummyObject;
 import com.sottocorp.okhttpvolleygson.network.ApiRequests;
 import com.sottocorp.okhttpvolleygson.network.GsonGetRequest;
-import com.sottocorp.sotti.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygsonsample.R;
 
 /**
  * Demonstrates how to make a JSON Object request

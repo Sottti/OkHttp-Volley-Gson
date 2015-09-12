@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.sottocorp.okhttpvolleygson.adapters.ImageLoadingARecyclerViewAdapter;
-import com.sottocorp.sotti.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygsonsample.R;
 
 import java.util.Arrays;
 import java.util.List;

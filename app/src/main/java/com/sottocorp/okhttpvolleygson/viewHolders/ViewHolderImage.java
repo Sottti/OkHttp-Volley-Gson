@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.sottocorp.okhttpvolleygson.base.App;
-import com.sottocorp.sotti.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygsonsample.R;
 
 /**
  * View holder for a recycler view item holding an image
@@ -15,7 +15,7 @@ public class ViewHolderImage extends RecyclerView.ViewHolder
 {
     private final NetworkImageView mNetworkImageView;
 
-    public ViewHolderImage(View itemView)
+    public ViewHolderImage(@NonNull final View itemView)
     {
         super(itemView);
 

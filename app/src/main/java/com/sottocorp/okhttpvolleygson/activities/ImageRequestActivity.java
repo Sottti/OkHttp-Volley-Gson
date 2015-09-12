@@ -10,7 +10,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.sottocorp.okhttpvolleygson.base.App;
-import com.sottocorp.sotti.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygsonsample.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
