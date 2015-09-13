@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.sottocorp.okhttpvolleygson.R;
 import com.sottocorp.okhttpvolleygson.base.App;
 import com.sottocorp.okhttpvolleygson.dataModel.DummyObject;
 import com.sottocorp.okhttpvolleygson.network.ApiRequests;
 import com.sottocorp.okhttpvolleygson.network.GsonGetRequest;
-import com.sottocorp.okhttpvolleygsonsample.R;
 
 /**
  * Demonstrates how to make a JSON Object request

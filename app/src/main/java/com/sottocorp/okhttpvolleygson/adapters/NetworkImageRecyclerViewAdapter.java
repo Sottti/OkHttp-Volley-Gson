@@ -6,19 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sottocorp.okhttpvolleygson.R;
 import com.sottocorp.okhttpvolleygson.viewHolders.ViewHolderImage;
-import com.sottocorp.okhttpvolleygsonsample.R;
 
 import java.util.List;
 
 /**
  * Adapter for the image loading recycler view
  */
-public class ImageLoadingARecyclerViewAdapter extends RecyclerView.Adapter
+public class NetworkImageRecyclerViewAdapter extends RecyclerView.Adapter
 {
     private final List<String> mImages;
 
-    public ImageLoadingARecyclerViewAdapter(@NonNull final List<String> images)
+    public NetworkImageRecyclerViewAdapter(@NonNull final List<String> images)
     {
         mImages = images;
     }

@@ -1,7 +1,5 @@
 # Android Networking I: OkHttp, Volley and Gson
 
-App showcasing what I' written in the next article:
-
 App sample about networking in Android with OkHttp, Volley and Gson.
 
 Check out this article for further information.

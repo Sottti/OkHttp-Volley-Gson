@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.sottocorp.okhttpvolleygson.adapters.ImageLoadingARecyclerViewAdapter;
-import com.sottocorp.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygson.R;
+import com.sottocorp.okhttpvolleygson.adapters.NetworkImageRecyclerViewAdapter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +44,6 @@ public class NetworkImageViewActivity extends AppCompatActivity
 
         final RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new ImageLoadingARecyclerViewAdapter(sImages));
+        mRecyclerView.setAdapter(new NetworkImageRecyclerViewAdapter(sImages));
     }
 }

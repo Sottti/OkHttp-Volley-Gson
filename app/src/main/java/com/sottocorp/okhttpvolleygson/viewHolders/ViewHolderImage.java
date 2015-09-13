@@ -5,8 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.android.volley.toolbox.NetworkImageView;
+import com.sottocorp.okhttpvolleygson.R;
 import com.sottocorp.okhttpvolleygson.base.App;
-import com.sottocorp.okhttpvolleygsonsample.R;
 
 /**
  * View holder for a recycler view item holding an image

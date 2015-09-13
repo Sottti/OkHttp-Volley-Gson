@@ -7,14 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.sottocorp.okhttpvolleygsonsample.R;
+import com.sottocorp.okhttpvolleygson.R;
 
 /**
  * Launches the different samples
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private Button mJSONObjectSample, mJSONArraySample, mNetworkImageView, mImageRequest;
+    private Button mJSONObjectSample, mJSONArraySample, mNetworkImageViewSample, mImageRequestSample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mJSONObjectSample = (Button) findViewById(R.id.json_object);
         mJSONArraySample = (Button) findViewById(R.id.json_array);
-        mNetworkImageView = (Button) findViewById(R.id.network_image_view);
-        mImageRequest = (Button) findViewById(R.id.image_request);
+        mNetworkImageViewSample = (Button) findViewById(R.id.network_image_view);
+        mImageRequestSample = (Button) findViewById(R.id.image_request);
 
         mJSONObjectSample.setOnClickListener(this);
         mJSONArraySample.setOnClickListener(this);
-        mNetworkImageView.setOnClickListener(this);
-        mImageRequest.setOnClickListener(this);
+        mNetworkImageViewSample.setOnClickListener(this);
+        mImageRequestSample.setOnClickListener(this);
     }
 
     @Override
@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             startActivity(new Intent(this, JSONArrayActivity.class));
         }
-        else if (view == mNetworkImageView)
+        else if (view == mNetworkImageViewSample)
         {
             startActivity(new Intent(this, NetworkImageViewActivity.class));
         }
-        else if (view == mImageRequest)
+        else if (view == mImageRequestSample)
         {
             startActivity(new Intent(this, ImageRequestActivity.class));
         }
