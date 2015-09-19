@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.sottocorp.sotti.okhttpvolleygsonsample"
+        applicationId "com.sottocorp.sotti.okhttpvolleygson"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -15,7 +15,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
