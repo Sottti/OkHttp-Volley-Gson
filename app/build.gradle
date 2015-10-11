@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.sottocorp.sotti.okhttpvolleygson"
+        applicationId "com.sottocorp.okhttpvolleygson"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -21,7 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.google.code.gson:gson:2.4'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'de.hdodenhof:circleimageview:2.0.0'
