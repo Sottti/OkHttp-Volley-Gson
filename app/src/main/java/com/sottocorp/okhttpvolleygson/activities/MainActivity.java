@@ -14,7 +14,8 @@ import com.sottocorp.okhttpvolleygson.R;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private Button mJSONObjectSample, mJSONArraySample, mNetworkImageViewSample, mImageRequestSample;
+    private Button mJSONObjectSample, mJSONArraySample,
+            mNetworkImageViewSample, mImageRequestSample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

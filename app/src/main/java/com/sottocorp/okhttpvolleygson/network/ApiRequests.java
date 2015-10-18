@@ -14,10 +14,13 @@ import com.sottocorp.okhttpvolleygson.dataModel.DummyObjectDeserializer;
 import java.util.ArrayList;
 
 /**
- * Requests to the API
+ * Api requests
  */
 public class ApiRequests
 {
+    private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(DummyObject.class, new DummyObjectDeserializer())
+            .create();
     /**
      * Returns a dummy object
      *
@@ -33,10 +36,6 @@ public class ApiRequests
     )
     {
         final String url = "http://www.mocky.io/v2/55973508b0e9e4a71a02f05f";
-
-        final Gson gson = new GsonBuilder()
-                .registerTypeAdapter(DummyObject.class, new DummyObjectDeserializer())
-                .create();
 
         return new GsonGetRequest<>
                 (
@@ -63,10 +62,6 @@ public class ApiRequests
     )
     {
         final String url = "http://www.mocky.io/v2/5597d86a6344715505576725";
-
-        final Gson gson = new GsonBuilder()
-                .registerTypeAdapter(DummyObject.class, new DummyObjectDeserializer())
-                .create();
 
         return new GsonGetRequest<>
                 (
@@ -95,9 +90,6 @@ public class ApiRequests
     )
     {
         final String url = "http://PostApiEndpoint";
-        final Gson gson = new GsonBuilder()
-                .registerTypeAdapter(DummyObject.class, new DummyObjectDeserializer())
-                .create();
 
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", "Ficus");
@@ -117,9 +109,7 @@ public class ApiRequests
                 (
                         url,
                         jsonObject.toString(),
-                        new TypeToken<DummyObject>()
-                        {
-                        }.getType(),
+                        new TypeToken<DummyObject>() {}.getType(),
                         gson,
                         listener,
                         errorListener
