@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import com.sottocorp.okhttpvolleygson.BuildConfig;
 import com.sottocorp.okhttpvolleygson.dataModel.DummyObject;
 import com.sottocorp.okhttpvolleygson.dataModel.DummyObjectDeserializer;
 
@@ -35,7 +36,7 @@ public class ApiRequests
             @NonNull final Response.ErrorListener errorListener
     )
     {
-        final String url = "http://www.mocky.io/v2/55973508b0e9e4a71a02f05f";
+        final String url = BuildConfig.apiDomainName + "/v2/55973508b0e9e4a71a02f05f";
 
         return new GsonGetRequest<>
                 (
@@ -61,7 +62,7 @@ public class ApiRequests
             @NonNull final Response.ErrorListener errorListener
     )
     {
-        final String url = "http://www.mocky.io/v2/5597d86a6344715505576725";
+        final String url = BuildConfig.apiDomainName + "/v2/5597d86a6344715505576725";
 
         return new GsonGetRequest<>
                 (
@@ -89,7 +90,7 @@ public class ApiRequests
             @NonNull final Response.ErrorListener errorListener
     )
     {
-        final String url = "http://PostApiEndpoint";
+        final String url = BuildConfig.apiDomainName + "/dummyPath";
 
         final JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", "Ficus");
