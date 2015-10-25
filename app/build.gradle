@@ -19,11 +19,6 @@ android {
     }
 
     productFlavors {
-        dev {
-            applicationId 'com.sottocorp.okhttpvolleygson.dev'
-            buildConfigField 'String', 'apiDomainName', '"http://www.mocky.io"'
-        }
-
         live {
             applicationId 'com.sottocorp.okhttpvolleygson'
             buildConfigField 'String', 'apiDomainName', '"http://www.mocky.io"'
