@@ -7,7 +7,6 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
-        <item name="android:colorBackground">@color/light_theme_default_background</item>
     </style>
 
 </resources>
