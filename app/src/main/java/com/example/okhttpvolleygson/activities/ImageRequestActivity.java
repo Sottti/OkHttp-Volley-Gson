@@ -56,15 +56,16 @@ public class ImageRequestActivity extends AppCompatActivity
                         0,
                         0,
                         ImageView.ScaleType.CENTER_INSIDE,
-                        null,
+                        Bitmap.Config.ARGB_8888,
                         new Response.ErrorListener()
                         {
                             public void onErrorResponse(VolleyError error)
-                            {          circleImageView.setImageResource(R.drawable.image_cloud_sad);
+                            {
+                                circleImageView.setImageResource(R.drawable.image_cloud_sad);
                             }
                         }
                 );
-        // Access the RequestQueue through your singleton class.
+
         App.getInstance().getVolleyRequestQueue().add(imageRequest);
     }
 

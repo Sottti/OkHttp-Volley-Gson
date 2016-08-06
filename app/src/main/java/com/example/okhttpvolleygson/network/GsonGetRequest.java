@@ -13,24 +13,12 @@ import com.google.gson.JsonSyntaxException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 
-/**
- * Makes a get request and converts the response from JsonElement into a
- * list of objects/object using with Google Gson.
- */
 public class GsonGetRequest<T> extends Request<T>
 {
     private final Gson gson;
     private final Type type;
     private final Response.Listener<T> listener;
 
-    /**
-     * Make a GET request and return a parsed object from JSON.
-     *
-     * @param url URL of the request to make
-     * @param type is the type of the object to be returned
-     * @param listener is the listener for the right answer
-     * @param errorListener  is the listener for the wrong answer
-     */
     public GsonGetRequest
     (
             @NonNull final String url,
