@@ -20,9 +20,6 @@ import com.sottocorp.okhttpvolleygson.R;
 
 import java.util.ArrayList;
 
-/**
- * Demonstrates how to make a JSON Object request
- */
 public class JsonArrayActivity extends AppCompatActivity
 {
     private static final String sTAG = "tagTwo";

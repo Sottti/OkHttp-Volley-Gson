@@ -11,9 +11,6 @@ import com.sottocorp.okhttpvolleygson.R;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Demonstrates how to load images using {@link com.android.volley.toolbox.NetworkImageView}
- */
 public class NetworkImageViewActivity extends AppCompatActivity
 {
     private final static List<String> sImages = Arrays.asList

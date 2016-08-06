@@ -14,9 +14,6 @@ import com.sottocorp.okhttpvolleygson.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-/**
- * Demonstrates how to load images using {@link ImageRequest}
- */
 public class ImageRequestActivity extends AppCompatActivity
 {
     private final static String sIMAGE_URL = "https://goo.gl/XOXAXG";
@@ -39,8 +36,6 @@ public class ImageRequestActivity extends AppCompatActivity
 
     private void performRequest(final CircleImageView circleImageView)
     {
-        // Retrieves an image specified by the URL, displays it in the UI.
-        // In this example the image is NOT resized.
         final ImageRequest imageRequest =
                 new ImageRequest
                 (

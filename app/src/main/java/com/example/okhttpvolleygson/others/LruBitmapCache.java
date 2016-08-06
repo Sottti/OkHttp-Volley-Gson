@@ -38,11 +38,6 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCac
         put(url, bitmap);
     }
 
-    /**
-     * @param context to get the resources from
-     *
-     * @return a cache size equal to approximately three screens worth of images.
-     */
     private static int getCacheSize(@NonNull final Context context)
     {
         final DisplayMetrics displayMetrics = context.getResources().

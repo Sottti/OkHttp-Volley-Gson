@@ -18,9 +18,6 @@ import com.example.okhttpvolleygson.network.ApiRequests;
 import com.example.okhttpvolleygson.network.GsonGetRequest;
 import com.sottocorp.okhttpvolleygson.R;
 
-/**
- * Demonstrates how to make a JSON Object request
- */
 public class JsonObjectActivity extends AppCompatActivity
 {
     private static final String sTAG = "tagOne";

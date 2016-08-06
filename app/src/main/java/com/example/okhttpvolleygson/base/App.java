@@ -11,9 +11,6 @@ import com.example.okhttpvolleygson.others.LruBitmapCache;
 import com.example.okhttpvolleygson.others.OkHttpStack;
 import com.squareup.okhttp.OkHttpClient;
 
-/**
- * Global application singleton instance.
- */
 public class App extends Application
 {
     private static App sInstance;

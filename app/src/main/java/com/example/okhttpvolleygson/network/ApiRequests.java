@@ -19,14 +19,7 @@ public class ApiRequests
     private static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(DummyObject.class, new DummyObjectDeserializer())
             .create();
-    /**
-     * Returns a dummy object
-     *
-     * @param listener is the listener for the correct answer
-     * @param errorListener is the listener for the error response
-     *
-     * @return {@link GsonGetRequest}
-     */
+
     public static GsonGetRequest<DummyObject> getDummyObject
     (
             @NonNull final Response.Listener<DummyObject> listener,
@@ -45,14 +38,6 @@ public class ApiRequests
                 );
     }
 
-    /**
-     * Returns a dummy object's array
-     *
-     * @param listener is the listener for the correct answer
-     * @param errorListener is the listener for the error response
-     *
-     * @return {@link GsonGetRequest}
-     */
     public static GsonGetRequest<ArrayList<DummyObject>> getDummyObjectArray
     (
             @NonNull final Response.Listener<ArrayList<DummyObject>> listener,
@@ -72,15 +57,6 @@ public class ApiRequests
     }
 
 
-    /**
-     * An example call (not used in this app example) to demonstrate how to do a Volley POST call
-     * and parse the response with Gson.
-     *
-     * @param listener is the listener for the success response
-     * @param errorListener is the listener for the error response
-     *
-     * @return {@link GsonPostRequest}
-     */
     public static GsonPostRequest getDummyObjectArrayWithPost
     (
             @NonNull final Response.Listener<DummyObject> listener,
