@@ -29,13 +29,24 @@ public class ImageRequestActivity extends AppCompatActivity
     private void init()
     {
         setUpToolbar();
-        final CircleImageView circleImageView =
-                (CircleImageView) findViewById(R.id.circularImageView);
-        performRequest(circleImageView);
+        performRequest();
     }
 
-    private void performRequest(final CircleImageView circleImageView)
+    private void setUpToolbar()
     {
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+
+        if (getSupportActionBar() != null)
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+    }
+
+    private void performRequest()
+    {
+        final CircleImageView circleImageView =
+                (CircleImageView) findViewById(R.id.circularImageView);
+
         final ImageRequest imageRequest =
                 new ImageRequest
                 (
@@ -61,16 +72,13 @@ public class ImageRequestActivity extends AppCompatActivity
                         }
                 );
 
-        App.getInstance().getVolleyRequestQueue().add(imageRequest);
+        App.addRequest(imageRequest, sIMAGE_URL);
     }
 
-    private void setUpToolbar()
+    @Override
+    protected void onStop()
     {
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
-        if (getSupportActionBar() != null)
-        {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
+        App.cancelAllRequests(sIMAGE_URL);
+        super.onStop();
     }
 }
