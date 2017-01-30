@@ -6,4 +6,6 @@ Check out the next article for further information:
 
 [Android Networking I: OkHttp, Volley and Gson](http://goo.gl/Zc3kMT)
 
-Thanks for reading!
+## License
+
+The contents of this repository are covered under the [MIT License](LICENSE).
