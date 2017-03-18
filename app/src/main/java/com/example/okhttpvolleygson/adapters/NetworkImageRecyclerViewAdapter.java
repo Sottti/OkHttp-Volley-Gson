@@ -5,42 +5,37 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.okhttpvolleygson.viewHolders.ViewHolderImage;
 import com.sottocorp.okhttpvolleygson.R;
-
 import java.util.List;
 
-public class NetworkImageRecyclerViewAdapter extends RecyclerView.Adapter
-{
-    private final List<String> mImages;
+public class NetworkImageRecyclerViewAdapter extends RecyclerView.Adapter {
 
-    public NetworkImageRecyclerViewAdapter(@NonNull final List<String> images)
-    {
-        mImages = images;
-    }
+  private final List<String> mImages;
 
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-    {
-        final View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.network_image_view_vh, parent, false);
+  public NetworkImageRecyclerViewAdapter(@NonNull
+  final List<String> images) {
+    mImages = images;
+  }
 
-        return new ViewHolderImage(view);
-    }
+  @Override
+  public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    final View view = LayoutInflater.from(parent.getContext())
+        .inflate(R.layout.network_image_view_vh, parent, false);
 
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
-    {
-        final ViewHolderImage viewHolderImage =
-                (ViewHolderImage) holder;
+    return new ViewHolderImage(view);
+  }
 
-        viewHolderImage.onBind(mImages.get(position));
-    }
+  @Override
+  public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    final ViewHolderImage viewHolderImage =
+        (ViewHolderImage) holder;
 
-    @Override
-    public int getItemCount()
-    {
-        return mImages.size();
-    }
+    viewHolderImage.onBind(mImages.get(position));
+  }
+
+  @Override
+  public int getItemCount() {
+    return mImages.size();
+  }
 }

@@ -1,27 +1,23 @@
 package com.example.okhttpvolleygson.dataModel;
 
-public class DummyObject
-{
-    private String mTitle;
-    private String mBody;
+public class DummyObject {
 
-    public String getTitle()
-    {
-        return mTitle;
-    }
+  private String mTitle;
+  private String mBody;
 
-    public void setTitle(String title)
-    {
-        mTitle = title;
-    }
+  public String getTitle() {
+    return mTitle;
+  }
 
-    public String getBody()
-    {
-        return mBody;
-    }
+  public void setTitle(String title) {
+    mTitle = title;
+  }
 
-    public void setBody(String body)
-    {
-        mBody = body;
-    }
+  public String getBody() {
+    return mBody;
+  }
+
+  public void setBody(String body) {
+    mBody = body;
+  }
 }

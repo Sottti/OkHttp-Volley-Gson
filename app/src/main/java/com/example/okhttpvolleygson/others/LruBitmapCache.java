@@ -5,48 +5,43 @@ import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v4.util.LruCache;
 import android.util.DisplayMetrics;
-
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 
-public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCache
-{
-    private LruBitmapCache(final int maxSize)
-    {
-        super(maxSize);
-    }
+public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCache {
 
-    public LruBitmapCache(@NonNull final Context ctx)
-    {
-        this(getCacheSize(ctx));
-    }
+  private LruBitmapCache(final int maxSize) {
+    super(maxSize);
+  }
 
-    @Override
-    protected int sizeOf(String key, Bitmap value)
-    {
-        return value.getRowBytes() * value.getHeight();
-    }
+  public LruBitmapCache(@NonNull
+  final Context ctx) {
+    this(getCacheSize(ctx));
+  }
 
-    @Override
-    public Bitmap getBitmap(String url)
-    {
-        return get(url);
-    }
+  private static int getCacheSize(@NonNull
+  final Context context) {
+    final DisplayMetrics displayMetrics = context.getResources().
+        getDisplayMetrics();
+    final int screenWidth = displayMetrics.widthPixels;
+    final int screenHeight = displayMetrics.heightPixels;
+    // 4 bytes per pixel
+    final int screenBytes = screenWidth * screenHeight * 4;
 
-    @Override
-    public void putBitmap(String url, Bitmap bitmap)
-    {
-        put(url, bitmap);
-    }
+    return screenBytes * 3;
+  }
 
-    private static int getCacheSize(@NonNull final Context context)
-    {
-        final DisplayMetrics displayMetrics = context.getResources().
-                getDisplayMetrics();
-        final int screenWidth = displayMetrics.widthPixels;
-        final int screenHeight = displayMetrics.heightPixels;
-        // 4 bytes per pixel
-        final int screenBytes = screenWidth * screenHeight * 4;
+  @Override
+  protected int sizeOf(String key, Bitmap value) {
+    return value.getRowBytes() * value.getHeight();
+  }
 
-        return screenBytes * 3;
-    }
+  @Override
+  public Bitmap getBitmap(String url) {
+    return get(url);
+  }
+
+  @Override
+  public void putBitmap(String url, Bitmap bitmap) {
+    put(url, bitmap);
+  }
 }

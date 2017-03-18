@@ -2,21 +2,21 @@
 
 <resources>
 
-    <string name="app_name">Networking I</string>
+  <string name="app_name">Networking I</string>
 
-    <string name="activity_title_JSON_object">JSON Object</string>
-    <string name="activity_title_JSON_array">JSON Array</string>
-    <string name="activity_title_network_image_view">Network Image View</string>
-    <string name="activity_title_image_request">Image Request</string>
-    <string name="json_object">JSON Object</string>
-    <string name="json_array">JSON Array</string>
-    <string name="network_image_view">Network Image View</string>
-    <string name="image_request">Image Request</string>
+  <string name="activity_title_JSON_object">JSON Object</string>
+  <string name="activity_title_JSON_array">JSON Array</string>
+  <string name="activity_title_network_image_view">Network Image View</string>
+  <string name="activity_title_image_request">Image Request</string>
+  <string name="json_object">JSON Object</string>
+  <string name="json_array">JSON Array</string>
+  <string name="network_image_view">Network Image View</string>
+  <string name="image_request">Image Request</string>
 
-    <string name="error_text">Something went wrong</string>
+  <string name="error_text">Something went wrong</string>
 
-    <string name="tools_text_title">Title</string>
-    <string name="tools_text_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+  <string name="tools_text_title">Title</string>
+  <string name="tools_text_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
         in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
