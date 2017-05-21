@@ -1,4 +1,4 @@
-package com.example.okhttpvolleygson.base;
+package com.sotti.okhttpvolleygson.base;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
@@ -6,8 +6,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-import com.example.okhttpvolleygson.others.LruBitmapCache;
-import com.example.okhttpvolleygson.others.OkHttp3Stack;
+import com.sotti.okhttpvolleygson.others.LruBitmapCache;
+import com.sotti.okhttpvolleygson.others.OkHttp3Stack;
 
 public class App extends Application {
 

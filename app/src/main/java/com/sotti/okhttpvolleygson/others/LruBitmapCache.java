@@ -1,4 +1,4 @@
-package com.example.okhttpvolleygson.others;
+package com.sotti.okhttpvolleygson.others;
 
 import android.content.Context;
 import android.graphics.Bitmap;

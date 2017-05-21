@@ -1,4 +1,4 @@
-package com.example.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.activities;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
-import com.example.okhttpvolleygson.base.App;
-import com.sottocorp.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.base.App;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ImageRequestActivity extends AppCompatActivity {

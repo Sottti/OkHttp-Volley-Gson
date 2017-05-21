@@ -1,11 +1,11 @@
-package com.example.okhttpvolleygson.viewHolders;
+package com.sotti.okhttpvolleygson.viewHolders;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import com.android.volley.toolbox.NetworkImageView;
-import com.example.okhttpvolleygson.base.App;
-import com.sottocorp.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.base.App;
 
 public class ViewHolderImage extends RecyclerView.ViewHolder {
 

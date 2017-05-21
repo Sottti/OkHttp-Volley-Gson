@@ -1,4 +1,4 @@
-package com.example.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,24 +11,25 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.okhttpvolleygson.base.App;
-import com.example.okhttpvolleygson.dataModel.DummyObject;
-import com.example.okhttpvolleygson.network.ApiRequests;
-import com.example.okhttpvolleygson.network.GsonGetRequest;
-import com.sottocorp.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.base.App;
+import com.sotti.okhttpvolleygson.dataModel.DummyObject;
+import com.sotti.okhttpvolleygson.network.ApiRequests;
+import com.sotti.okhttpvolleygson.network.GsonGetRequest;
+import java.util.ArrayList;
 
-public class JsonObjectActivity extends AppCompatActivity {
+public class JsonArrayActivity extends AppCompatActivity {
 
-  private static final String sTAG = "tagOne";
+  private static final String sTAG = "tagTwo";
 
-  private TextView mTitle, mBody;
   private ProgressBar mProgressBar;
   private LinearLayout mContent, mErrorView;
+  private TextView mTitle, mBody, mSecondTitle, mSecondBody;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.json_object_request_activity);
+    setContentView(R.layout.json_array_request_activity);
     init();
   }
 
@@ -51,19 +52,23 @@ public class JsonObjectActivity extends AppCompatActivity {
     mTitle = (TextView) findViewById(R.id.my_title);
     mBody = (TextView) findViewById(R.id.my_body);
     mBody.setMovementMethod(new ScrollingMovementMethod());
+    mBody.setMovementMethod(new ScrollingMovementMethod());
+    mSecondTitle = (TextView) findViewById(R.id.my_title_2);
+    mSecondBody = (TextView) findViewById(R.id.my_body_2);
+    mSecondBody.setMovementMethod(new ScrollingMovementMethod());
     mErrorView = (LinearLayout) findViewById(R.id.error_view);
     mContent = (LinearLayout) findViewById(R.id.content);
   }
 
   private void performRequest() {
-    final GsonGetRequest<DummyObject> gsonGetRequest =
-        ApiRequests.getDummyObject
+    final GsonGetRequest<ArrayList<DummyObject>> gsonGetRequest =
+        ApiRequests.getDummyObjectArray
             (
-                new Response.Listener<DummyObject>() {
+                new Response.Listener<ArrayList<DummyObject>>() {
                   @Override
-                  public void onResponse(DummyObject dummyObject) {
+                  public void onResponse(ArrayList<DummyObject> dummyObjectArrayList) {
                     // Deal with the DummyObject here
-                    onApiResponse(dummyObject);
+                    onApiResponse(dummyObjectArrayList);
                   }
                 }
                 ,
@@ -79,10 +84,11 @@ public class JsonObjectActivity extends AppCompatActivity {
     App.addRequest(gsonGetRequest, sTAG);
   }
 
-  private void onApiResponse(final DummyObject dummyObject) {
+  private void onApiResponse(@NonNull
+  final ArrayList<DummyObject> dummyObjectArrayList) {
     mProgressBar.setVisibility(View.GONE);
     mContent.setVisibility(View.VISIBLE);
-    setData(dummyObject);
+    setData(dummyObjectArrayList);
   }
 
   private void onApiError() {
@@ -91,14 +97,17 @@ public class JsonObjectActivity extends AppCompatActivity {
   }
 
   private void setData(@NonNull
-  final DummyObject dummyObject) {
-    mTitle.setText(dummyObject.getTitle());
-    mBody.setText(dummyObject.getBody());
+  final ArrayList<DummyObject> dummyObjectArrayList) {
+    mTitle.setText(dummyObjectArrayList.get(0).getTitle());
+    mBody.setText(dummyObjectArrayList.get(0).getBody());
+    mSecondTitle.setText(dummyObjectArrayList.get(1).getTitle());
+    mSecondBody.setText(dummyObjectArrayList.get(1).getBody());
   }
 
   @Override
   protected void onStop() {
     App.cancelAllRequests(sTAG);
+
     super.onStop();
   }
 }

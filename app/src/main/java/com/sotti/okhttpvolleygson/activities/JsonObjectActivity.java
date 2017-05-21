@@ -1,4 +1,4 @@
-package com.example.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,25 +11,24 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.example.okhttpvolleygson.base.App;
-import com.example.okhttpvolleygson.dataModel.DummyObject;
-import com.example.okhttpvolleygson.network.ApiRequests;
-import com.example.okhttpvolleygson.network.GsonGetRequest;
-import com.sottocorp.okhttpvolleygson.R;
-import java.util.ArrayList;
+import com.sotti.okhttpvolleygson.base.App;
+import com.sotti.okhttpvolleygson.dataModel.DummyObject;
+import com.sotti.okhttpvolleygson.network.ApiRequests;
+import com.sotti.okhttpvolleygson.network.GsonGetRequest;
+import com.sotti.okhttpvolleygson.R;
 
-public class JsonArrayActivity extends AppCompatActivity {
+public class JsonObjectActivity extends AppCompatActivity {
 
-  private static final String sTAG = "tagTwo";
+  private static final String sTAG = "tagOne";
 
+  private TextView mTitle, mBody;
   private ProgressBar mProgressBar;
   private LinearLayout mContent, mErrorView;
-  private TextView mTitle, mBody, mSecondTitle, mSecondBody;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.json_array_request_activity);
+    setContentView(R.layout.json_object_request_activity);
     init();
   }
 
@@ -52,23 +51,19 @@ public class JsonArrayActivity extends AppCompatActivity {
     mTitle = (TextView) findViewById(R.id.my_title);
     mBody = (TextView) findViewById(R.id.my_body);
     mBody.setMovementMethod(new ScrollingMovementMethod());
-    mBody.setMovementMethod(new ScrollingMovementMethod());
-    mSecondTitle = (TextView) findViewById(R.id.my_title_2);
-    mSecondBody = (TextView) findViewById(R.id.my_body_2);
-    mSecondBody.setMovementMethod(new ScrollingMovementMethod());
     mErrorView = (LinearLayout) findViewById(R.id.error_view);
     mContent = (LinearLayout) findViewById(R.id.content);
   }
 
   private void performRequest() {
-    final GsonGetRequest<ArrayList<DummyObject>> gsonGetRequest =
-        ApiRequests.getDummyObjectArray
+    final GsonGetRequest<DummyObject> gsonGetRequest =
+        ApiRequests.getDummyObject
             (
-                new Response.Listener<ArrayList<DummyObject>>() {
+                new Response.Listener<DummyObject>() {
                   @Override
-                  public void onResponse(ArrayList<DummyObject> dummyObjectArrayList) {
+                  public void onResponse(DummyObject dummyObject) {
                     // Deal with the DummyObject here
-                    onApiResponse(dummyObjectArrayList);
+                    onApiResponse(dummyObject);
                   }
                 }
                 ,
@@ -84,11 +79,10 @@ public class JsonArrayActivity extends AppCompatActivity {
     App.addRequest(gsonGetRequest, sTAG);
   }
 
-  private void onApiResponse(@NonNull
-  final ArrayList<DummyObject> dummyObjectArrayList) {
+  private void onApiResponse(final DummyObject dummyObject) {
     mProgressBar.setVisibility(View.GONE);
     mContent.setVisibility(View.VISIBLE);
-    setData(dummyObjectArrayList);
+    setData(dummyObject);
   }
 
   private void onApiError() {
@@ -97,17 +91,14 @@ public class JsonArrayActivity extends AppCompatActivity {
   }
 
   private void setData(@NonNull
-  final ArrayList<DummyObject> dummyObjectArrayList) {
-    mTitle.setText(dummyObjectArrayList.get(0).getTitle());
-    mBody.setText(dummyObjectArrayList.get(0).getBody());
-    mSecondTitle.setText(dummyObjectArrayList.get(1).getTitle());
-    mSecondBody.setText(dummyObjectArrayList.get(1).getBody());
+  final DummyObject dummyObject) {
+    mTitle.setText(dummyObject.getTitle());
+    mBody.setText(dummyObject.getBody());
   }
 
   @Override
   protected void onStop() {
     App.cancelAllRequests(sTAG);
-
     super.onStop();
   }
 }
