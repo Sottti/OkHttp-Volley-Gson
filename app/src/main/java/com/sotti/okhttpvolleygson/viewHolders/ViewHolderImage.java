@@ -11,8 +11,7 @@ public class ViewHolderImage extends RecyclerView.ViewHolder {
 
   private NetworkImageView mNetworkImageView;
 
-  public ViewHolderImage(@NonNull
-  final View itemView) {
+  public ViewHolderImage(@NonNull final View itemView) {
     super(itemView);
     bindResources(itemView);
   }
@@ -23,8 +22,7 @@ public class ViewHolderImage extends RecyclerView.ViewHolder {
     mNetworkImageView.setErrorImageResId(R.drawable.image_cloud_sad);
   }
 
-  public void onBind(@NonNull
-  final String imageUrl) {
+  public void onBind(@NonNull final String imageUrl) {
     mNetworkImageView.setImageUrl(imageUrl, App.getInstance().getVolleyImageLoader());
   }
 }

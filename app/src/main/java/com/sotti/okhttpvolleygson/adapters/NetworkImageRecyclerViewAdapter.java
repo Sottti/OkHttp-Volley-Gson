@@ -5,16 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.sotti.okhttpvolleygson.viewHolders.ViewHolderImage;
 import com.sotti.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.viewHolders.ViewHolderImage;
 import java.util.List;
 
 public class NetworkImageRecyclerViewAdapter extends RecyclerView.Adapter {
 
   private final List<String> mImages;
 
-  public NetworkImageRecyclerViewAdapter(@NonNull
-  final List<String> images) {
+  public NetworkImageRecyclerViewAdapter(@NonNull final List<String> images) {
     mImages = images;
   }
 

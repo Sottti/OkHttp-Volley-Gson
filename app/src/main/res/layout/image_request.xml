@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <include
-    layout="@layout/toolbar"/>
+  <include layout="@layout/toolbar" />
 
   <de.hdodenhof.circleimageview.CircleImageView
     android:id="@+id/circularImageView"
@@ -16,6 +14,6 @@
     android:layout_margin="32dp"
     android:layout_gravity="center"
     android:src="@drawable/bumblebee"
-    tools:ignore="ContentDescription"/>
+    tools:ignore="ContentDescription" />
 
 </merge>

@@ -20,10 +20,8 @@ public class ApiRequests {
 
   public static GsonGetRequest<DummyObject> getDummyObject
       (
-          @NonNull
-          final Response.Listener<DummyObject> listener,
-          @NonNull
-          final Response.ErrorListener errorListener
+          @NonNull final Response.Listener<DummyObject> listener,
+          @NonNull final Response.ErrorListener errorListener
       ) {
     final String url = BuildConfig.apiDomainName + "/v2/55973508b0e9e4a71a02f05f";
 
@@ -40,10 +38,8 @@ public class ApiRequests {
 
   public static GsonGetRequest<ArrayList<DummyObject>> getDummyObjectArray
       (
-          @NonNull
-          final Response.Listener<ArrayList<DummyObject>> listener,
-          @NonNull
-          final Response.ErrorListener errorListener
+          @NonNull final Response.Listener<ArrayList<DummyObject>> listener,
+          @NonNull final Response.ErrorListener errorListener
       ) {
     final String url = BuildConfig.apiDomainName + "/v2/5597d86a6344715505576725";
 
@@ -61,10 +57,8 @@ public class ApiRequests {
 
   public static GsonPostRequest getDummyObjectArrayWithPost
       (
-          @NonNull
-          final Response.Listener<DummyObject> listener,
-          @NonNull
-          final Response.ErrorListener errorListener
+          @NonNull final Response.Listener<DummyObject> listener,
+          @NonNull final Response.ErrorListener errorListener
       ) {
     final String url = BuildConfig.apiDomainName + "/dummyPath";
 

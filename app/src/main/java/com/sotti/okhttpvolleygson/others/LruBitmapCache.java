@@ -13,13 +13,11 @@ public class LruBitmapCache extends LruCache<String, Bitmap> implements ImageCac
     super(maxSize);
   }
 
-  public LruBitmapCache(@NonNull
-  final Context ctx) {
+  public LruBitmapCache(@NonNull final Context ctx) {
     this(getCacheSize(ctx));
   }
 
-  private static int getCacheSize(@NonNull
-  final Context context) {
+  private static int getCacheSize(@NonNull final Context context) {
     final DisplayMetrics displayMetrics = context.getResources().
         getDisplayMetrics();
     final int screenWidth = displayMetrics.widthPixels;

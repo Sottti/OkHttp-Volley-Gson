@@ -19,16 +19,11 @@ public class GsonGetRequest<T> extends Request<T> {
 
   public GsonGetRequest
       (
-          @NonNull
-          final String url,
-          @NonNull
-          final Type type,
-          @NonNull
-          final Gson gson,
-          @NonNull
-          final Response.Listener<T> listener,
-          @NonNull
-          final Response.ErrorListener errorListener
+          @NonNull final String url,
+          @NonNull final Type type,
+          @NonNull final Gson gson,
+          @NonNull final Response.Listener<T> listener,
+          @NonNull final Response.ErrorListener errorListener
       ) {
     super(Method.GET, url, errorListener);
 

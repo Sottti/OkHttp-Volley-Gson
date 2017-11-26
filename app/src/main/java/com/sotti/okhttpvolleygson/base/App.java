@@ -20,20 +20,16 @@ public class App extends Application {
     return sInstance;
   }
 
-  private static void addRequest(@NonNull
-  final Request<?> request) {
+  private static void addRequest(@NonNull final Request<?> request) {
     getInstance().getVolleyRequestQueue().add(request);
   }
 
-  public static void addRequest(@NonNull
-  final Request<?> request, @NonNull
-  final String tag) {
+  public static void addRequest(@NonNull final Request<?> request, @NonNull final String tag) {
     request.setTag(tag);
     addRequest(request);
   }
 
-  public static void cancelAllRequests(@NonNull
-  final String tag) {
+  public static void cancelAllRequests(@NonNull final String tag) {
     getInstance().getVolleyRequestQueue().cancelAll(tag);
   }
 

@@ -84,8 +84,7 @@ public class JsonArrayActivity extends AppCompatActivity {
     App.addRequest(gsonGetRequest, sTAG);
   }
 
-  private void onApiResponse(@NonNull
-  final ArrayList<DummyObject> dummyObjectArrayList) {
+  private void onApiResponse(@NonNull final ArrayList<DummyObject> dummyObjectArrayList) {
     mProgressBar.setVisibility(View.GONE);
     mContent.setVisibility(View.VISIBLE);
     setData(dummyObjectArrayList);
@@ -96,8 +95,7 @@ public class JsonArrayActivity extends AppCompatActivity {
     mErrorView.setVisibility(View.VISIBLE);
   }
 
-  private void setData(@NonNull
-  final ArrayList<DummyObject> dummyObjectArrayList) {
+  private void setData(@NonNull final ArrayList<DummyObject> dummyObjectArrayList) {
     mTitle.setText(dummyObjectArrayList.get(0).getTitle());
     mBody.setText(dummyObjectArrayList.get(0).getBody());
     mSecondTitle.setText(dummyObjectArrayList.get(1).getTitle());

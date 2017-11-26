@@ -11,11 +11,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.sotti.okhttpvolleygson.R;
 import com.sotti.okhttpvolleygson.base.App;
 import com.sotti.okhttpvolleygson.dataModel.DummyObject;
 import com.sotti.okhttpvolleygson.network.ApiRequests;
 import com.sotti.okhttpvolleygson.network.GsonGetRequest;
-import com.sotti.okhttpvolleygson.R;
 
 public class JsonObjectActivity extends AppCompatActivity {
 
@@ -90,8 +90,7 @@ public class JsonObjectActivity extends AppCompatActivity {
     mErrorView.setVisibility(View.VISIBLE);
   }
 
-  private void setData(@NonNull
-  final DummyObject dummyObject) {
+  private void setData(@NonNull final DummyObject dummyObject) {
     mTitle.setText(dummyObject.getTitle());
     mBody.setText(dummyObject.getBody());
   }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <include layout="@layout/toolbar"/>
+  <include layout="@layout/toolbar" />
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -25,35 +24,35 @@
       android:layout_weight="1"
       android:layout_gravity="center_horizontal"
       android:src="@drawable/yoda"
-      tools:ignore="ContentDescription"/>
+      tools:ignore="ContentDescription" />
 
     <Button
       android:id="@+id/button_json_object"
       style="@style/Widget.AppCompat.Button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/json_object"/>
+      android:text="@string/json_object" />
 
     <Button
       android:id="@+id/button_json_array"
       style="@style/Widget.AppCompat.Button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/json_array"/>
+      android:text="@string/json_array" />
 
     <Button
       android:id="@+id/button_network_image_view"
       style="@style/Widget.AppCompat.Button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/network_image_view"/>
+      android:text="@string/network_image_view" />
 
     <Button
       android:id="@+id/button_image_request"
       style="@style/Widget.AppCompat.Button"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/image_request"/>
+      android:text="@string/image_request" />
 
   </LinearLayout>
 

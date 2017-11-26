@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<manifest
-  xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.sotti.okhttpvolleygson">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.INTERNET" />
 
   <application
     android:allowBackup="true"
@@ -18,31 +17,31 @@
       android:label="@string/app_name"
       android:name="com.sotti.okhttpvolleygson.activities.MainActivity">
       <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
+        <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
 
     <activity
       android:label="@string/activity_title_JSON_object"
       android:name="com.sotti.okhttpvolleygson.activities.JsonObjectActivity"
-      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity"/>
+      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity" />
 
     <activity
       android:label="@string/activity_title_JSON_array"
       android:name="com.sotti.okhttpvolleygson.activities.JsonArrayActivity"
-      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity"/>
+      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity" />
 
     <activity
       android:label="@string/activity_title_network_image_view"
       android:name="com.sotti.okhttpvolleygson.activities.NetworkImageViewActivity"
-      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity"/>
+      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity" />
 
     <activity
       android:label="@string/activity_title_image_request"
       android:name="com.sotti.okhttpvolleygson.activities.ImageRequestActivity"
-      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity"/>
+      android:parentActivityName="com.sotti.okhttpvolleygson.activities.MainActivity" />
 
   </application>
 

@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import com.sotti.okhttpvolleygson.adapters.NetworkImageRecyclerViewAdapter;
 import com.sotti.okhttpvolleygson.R;
+import com.sotti.okhttpvolleygson.adapters.NetworkImageRecyclerViewAdapter;
 import java.util.Arrays;
 import java.util.List;
 
