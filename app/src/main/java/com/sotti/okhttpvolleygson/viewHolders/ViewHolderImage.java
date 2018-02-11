@@ -17,7 +17,7 @@ public class ViewHolderImage extends RecyclerView.ViewHolder {
   }
 
   private void bindResources(final @NonNull View itemView) {
-    mNetworkImageView = (NetworkImageView) itemView.findViewById(R.id.networkImageView);
+    mNetworkImageView = (NetworkImageView) itemView.findViewById(R.id.network_image_view);
     mNetworkImageView.setDefaultImageResId(R.drawable.image_sun_smile);
     mNetworkImageView.setErrorImageResId(R.drawable.image_cloud_sad);
   }

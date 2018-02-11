@@ -23,15 +23,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   private void init() {
     setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
-    mJSONObjectSample = (Button) findViewById(R.id.button_json_object);
-    mJSONArraySample = (Button) findViewById(R.id.button_json_array);
-    mNetworkImageViewSample = (Button) findViewById(R.id.button_network_image_view);
-    mImageRequestSample = (Button) findViewById(R.id.button_image_request);
+    mJSONArraySample = findViewById(R.id.button_json_array);
+    mJSONObjectSample = findViewById(R.id.button_json_object);
+    mImageRequestSample = findViewById(R.id.button_image_request);
+    mNetworkImageViewSample = findViewById(R.id.button_network_image_view);
 
-    mJSONObjectSample.setOnClickListener(this);
     mJSONArraySample.setOnClickListener(this);
-    mNetworkImageViewSample.setOnClickListener(this);
+    mJSONObjectSample.setOnClickListener(this);
     mImageRequestSample.setOnClickListener(this);
+    mNetworkImageViewSample.setOnClickListener(this);
   }
 
   @Override
