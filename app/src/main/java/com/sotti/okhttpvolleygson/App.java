@@ -1,4 +1,4 @@
-package com.sotti.okhttpvolleygson.base;
+package com.sotti.okhttpvolleygson;
 
 import android.app.Application;
 import android.support.annotation.NonNull;
@@ -6,15 +6,15 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.sotti.okhttpvolleygson.data.OkHttp3Stack;
 import com.sotti.okhttpvolleygson.others.LruBitmapCache;
-import com.sotti.okhttpvolleygson.others.OkHttp3Stack;
 
 public class App extends Application {
 
   private static App sInstance;
+  private ImageLoader mImageLoader;
   private RequestQueue mRequestQueue;
   private LruBitmapCache mLruBitmapCache;
-  private ImageLoader mImageLoader;
 
   public static App getInstance() {
     return sInstance;
@@ -40,7 +40,7 @@ public class App extends Application {
   }
 
   @NonNull
-  public RequestQueue getVolleyRequestQueue() {
+  private RequestQueue getVolleyRequestQueue() {
     if (mRequestQueue == null) {
       mRequestQueue = Volley.newRequestQueue(this, new OkHttp3Stack());
     }

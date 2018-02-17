@@ -1,16 +1,15 @@
-package com.sotti.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.ui;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
+import com.sotti.okhttpvolleygson.App;
 import com.sotti.okhttpvolleygson.R;
-import com.sotti.okhttpvolleygson.base.App;
 import com.sotti.okhttpvolleygson.databinding.ImageRequestBinding;
 
 public class ImageRequestActivity extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class ImageRequestActivity extends AppCompatActivity {
   }
 
   private void setUpToolbar() {
-    setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+    setSupportActionBar(mViewBinding.includeToolbar.toolbar);
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

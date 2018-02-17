@@ -1,4 +1,4 @@
-package com.sotti.okhttpvolleygson.dataModel;
+package com.sotti.okhttpvolleygson.model;
 
 public class DummyObject {
 
@@ -17,7 +17,7 @@ public class DummyObject {
     return mBody;
   }
 
-  public void setBody(String body) {
+  void setBody(String body) {
     mBody = body;
   }
 }

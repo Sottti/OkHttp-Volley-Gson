@@ -1,24 +1,23 @@
-package com.sotti.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.sotti.okhttpvolleygson.App;
 import com.sotti.okhttpvolleygson.R;
-import com.sotti.okhttpvolleygson.base.App;
-import com.sotti.okhttpvolleygson.dataModel.DummyObject;
+import com.sotti.okhttpvolleygson.data.ApiRequests;
+import com.sotti.okhttpvolleygson.data.GsonGetRequest;
 import com.sotti.okhttpvolleygson.databinding.JsonObjectRequestActivityBinding;
-import com.sotti.okhttpvolleygson.network.ApiRequests;
-import com.sotti.okhttpvolleygson.network.GsonGetRequest;
+import com.sotti.okhttpvolleygson.model.DummyObject;
 
 public class JsonObjectActivity extends AppCompatActivity {
 
   private static final String sTAG = "tagOne";
-  JsonObjectRequestActivityBinding mViewBinding;
+  private JsonObjectRequestActivityBinding mViewBinding;
 
 
   @Override
@@ -30,7 +29,7 @@ public class JsonObjectActivity extends AppCompatActivity {
   }
 
   private void setUpToolbar() {
-    setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+    setSupportActionBar(mViewBinding.includeToolbar.toolbar);
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

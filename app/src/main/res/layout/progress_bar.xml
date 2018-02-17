@@ -6,4 +6,4 @@
   android:layout_width="@dimen/progress_bar_circular_size"
   android:layout_height="@dimen/progress_bar_circular_size"
   android:layout_gravity="center"
-  android:indeterminate="true" />
+  android:indeterminate="true"/>

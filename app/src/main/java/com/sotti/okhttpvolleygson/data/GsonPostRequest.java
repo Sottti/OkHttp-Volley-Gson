@@ -1,4 +1,4 @@
-package com.sotti.okhttpvolleygson.network;
+package com.sotti.okhttpvolleygson.data;
 
 import android.support.annotation.NonNull;
 import com.android.volley.NetworkResponse;
@@ -17,7 +17,7 @@ public class GsonPostRequest<T> extends JsonRequest<T> {
   private final Type type;
   private final Response.Listener<T> listener;
 
-  public GsonPostRequest
+  GsonPostRequest
       (
           @NonNull final String url,
           @NonNull final String body,

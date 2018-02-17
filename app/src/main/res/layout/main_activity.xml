@@ -3,6 +3,12 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools">
 
+  <data>
+    <variable
+      name="ClickHandler"
+      type="com.sotti.okhttpvolleygson.ui.MainActivity.MainActivityClickHandler"/>
+  </data>
+
   <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,6 +43,7 @@
       android:layout_marginEnd="@dimen/activity_horizontal_margin"
       android:layout_marginLeft="@dimen/activity_horizontal_margin"
       android:layout_marginRight="@dimen/activity_horizontal_margin"
+      android:onClick="@{ClickHandler::onJsonObjectButtonClick}"
       android:text="@string/json_object"
       app:layout_constraintBottom_toTopOf="@id/button_json_array"
       app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +58,7 @@
       android:layout_marginEnd="@dimen/activity_horizontal_margin"
       android:layout_marginLeft="@dimen/activity_horizontal_margin"
       android:layout_marginRight="@dimen/activity_horizontal_margin"
+      android:onClick="@{ClickHandler::onJsonArrayButtonClick}"
       android:text="@string/json_array"
       app:layout_constraintBottom_toTopOf="@id/button_network_image_view"
       app:layout_constraintEnd_toEndOf="parent"
@@ -65,6 +73,7 @@
       android:layout_marginEnd="@dimen/activity_horizontal_margin"
       android:layout_marginLeft="@dimen/activity_horizontal_margin"
       android:layout_marginRight="@dimen/activity_horizontal_margin"
+      android:onClick="@{ClickHandler::onNetworkImageViewButtonClick}"
       android:text="@string/network_image_view"
       app:layout_constraintBottom_toTopOf="@id/button_image_request"
       app:layout_constraintEnd_toEndOf="parent"
@@ -80,6 +89,7 @@
       android:layout_marginEnd="@dimen/activity_horizontal_margin"
       android:layout_marginLeft="@dimen/activity_horizontal_margin"
       android:layout_marginRight="@dimen/activity_horizontal_margin"
+      android:onClick="@{ClickHandler::onImageRequestButtonClick}"
       android:text="@string/image_request"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"

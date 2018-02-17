@@ -1,4 +1,4 @@
-package com.sotti.okhttpvolleygson.network;
+package com.sotti.okhttpvolleygson.data;
 
 import android.support.annotation.NonNull;
 import com.android.volley.Response;
@@ -8,8 +8,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.sotti.okhttpvolleygson.BuildConfig;
-import com.sotti.okhttpvolleygson.dataModel.DummyObject;
-import com.sotti.okhttpvolleygson.dataModel.DummyObjectDeserializer;
+import com.sotti.okhttpvolleygson.model.DummyObject;
+import com.sotti.okhttpvolleygson.model.DummyObjectDeserializer;
 import java.util.ArrayList;
 
 public class ApiRequests {

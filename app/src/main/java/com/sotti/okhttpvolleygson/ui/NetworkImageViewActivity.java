@@ -1,11 +1,10 @@
-package com.sotti.okhttpvolleygson.activities;
+package com.sotti.okhttpvolleygson.ui;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import com.sotti.okhttpvolleygson.R;
-import com.sotti.okhttpvolleygson.adapters.NetworkImageRecyclerViewAdapter;
+import com.sotti.okhttpvolleygson.databinding.NetworkImageViewBinding;
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,29 +27,25 @@ public class NetworkImageViewActivity extends AppCompatActivity {
           "https://lh3.googleusercontent.com/5H2ql2TAP0dw_U2kNEP9__nbyBrbvX9Lek0qW3i2K-rF=w950-h713-no",
           "https://lh3.googleusercontent.com/6iA-Q8DyXPOIASEJWMBU1szFzd9isijp5HbDhB17-Q-O=w950-h713-no"
       );
+  private NetworkImageViewBinding mViewBinding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.network_image_view);
-    init();
-  }
-
-  private void init() {
+    mViewBinding = DataBindingUtil.setContentView(this, R.layout.network_image_view);
     setUpToolbar();
     setUpRecyclerView();
   }
 
   private void setUpToolbar() {
-    setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
+    setSupportActionBar(mViewBinding.includeToolbar.toolbar);
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
   }
 
   private void setUpRecyclerView() {
-    final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-    recyclerView.setAdapter(new NetworkImageRecyclerViewAdapter(sImages));
+    mViewBinding.recyclerView.setHasFixedSize(true);
+    mViewBinding.recyclerView.setAdapter(new NetworkImageRecyclerViewAdapter(sImages));
   }
 }

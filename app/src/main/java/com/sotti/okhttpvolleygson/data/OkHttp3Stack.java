@@ -1,4 +1,4 @@
-package com.sotti.okhttpvolleygson.others;
+package com.sotti.okhttpvolleygson.data;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -32,7 +32,7 @@ public class OkHttp3Stack implements HttpStack {
   public OkHttp3Stack() {
   }
 
-  private static HttpEntity entityFromOkHttpResponse(Response r) throws IOException {
+  private static HttpEntity entityFromOkHttpResponse(Response r) {
     BasicHttpEntity entity = new BasicHttpEntity();
     ResponseBody body = r.body();
 
@@ -49,7 +49,7 @@ public class OkHttp3Stack implements HttpStack {
   @SuppressWarnings("deprecation")
   private static void setConnectionParametersForRequest(okhttp3.Request.Builder builder,
       com.android.volley.Request<?> request)
-      throws IOException, AuthFailureError {
+      throws AuthFailureError {
     switch (request.getMethod()) {
       case Request.Method.DEPRECATED_GET_OR_POST:
         // Ensure backwards compatibility.  Volley assumes a request with a null body is a GET.
