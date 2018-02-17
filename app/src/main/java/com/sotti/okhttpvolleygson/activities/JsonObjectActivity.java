@@ -1,58 +1,39 @@
 package com.sotti.okhttpvolleygson.activities;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.sotti.okhttpvolleygson.R;
 import com.sotti.okhttpvolleygson.base.App;
 import com.sotti.okhttpvolleygson.dataModel.DummyObject;
+import com.sotti.okhttpvolleygson.databinding.JsonObjectRequestActivityBinding;
 import com.sotti.okhttpvolleygson.network.ApiRequests;
 import com.sotti.okhttpvolleygson.network.GsonGetRequest;
 
 public class JsonObjectActivity extends AppCompatActivity {
 
   private static final String sTAG = "tagOne";
+  JsonObjectRequestActivityBinding mViewBinding;
 
-  private TextView mTitle, mBody;
-  private ProgressBar mProgressBar;
-  private LinearLayout mContent, mErrorView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.json_object_request_activity);
-    init();
-  }
-
-  private void init() {
+    mViewBinding = DataBindingUtil.setContentView(this, R.layout.json_object_request_activity);
     setUpToolbar();
-    bindResources();
     performRequest();
   }
 
   private void setUpToolbar() {
     setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-  }
-
-  private void bindResources() {
-    mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
-    mTitle = (TextView) findViewById(R.id.my_title);
-    mBody = (TextView) findViewById(R.id.my_body);
-    mBody.setMovementMethod(new ScrollingMovementMethod());
-    mErrorView = (LinearLayout) findViewById(R.id.include_error_view);
-    mContent = (LinearLayout) findViewById(R.id.content);
   }
 
   private void performRequest() {
@@ -75,24 +56,24 @@ public class JsonObjectActivity extends AppCompatActivity {
                   }
                 }
             );
-
     App.addRequest(gsonGetRequest, sTAG);
   }
 
   private void onApiResponse(final DummyObject dummyObject) {
-    mProgressBar.setVisibility(View.GONE);
-    mContent.setVisibility(View.VISIBLE);
+    mViewBinding.includeProgressBar.setVisibility(View.GONE);
+    mViewBinding.includeErrorView.setVisibility(View.GONE);
+    mViewBinding.content.setVisibility(View.VISIBLE);
     setData(dummyObject);
   }
 
   private void onApiError() {
-    mProgressBar.setVisibility(View.GONE);
-    mErrorView.setVisibility(View.VISIBLE);
+    mViewBinding.includeProgressBar.setVisibility(View.GONE);
+    mViewBinding.includeErrorView.setVisibility(View.VISIBLE);
   }
 
   private void setData(@NonNull final DummyObject dummyObject) {
-    mTitle.setText(dummyObject.getTitle());
-    mBody.setText(dummyObject.getBody());
+    mViewBinding.myTitle.setText(dummyObject.getTitle());
+    mViewBinding.myBody.setText(dummyObject.getBody());
   }
 
   @Override
