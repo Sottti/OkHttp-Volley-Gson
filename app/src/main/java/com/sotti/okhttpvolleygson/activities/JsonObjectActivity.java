@@ -51,7 +51,7 @@ public class JsonObjectActivity extends AppCompatActivity {
     mTitle = (TextView) findViewById(R.id.my_title);
     mBody = (TextView) findViewById(R.id.my_body);
     mBody.setMovementMethod(new ScrollingMovementMethod());
-    mErrorView = (LinearLayout) findViewById(R.id.error_view);
+    mErrorView = (LinearLayout) findViewById(R.id.include_error_view);
     mContent = (LinearLayout) findViewById(R.id.content);
   }
 

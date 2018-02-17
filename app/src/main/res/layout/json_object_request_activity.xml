@@ -6,11 +6,15 @@
   android:layout_height="match_parent"
   tools:context="com.sotti.okhttpvolleygson.activities.JsonObjectActivity">
 
-  <include layout="@layout/toolbar" />
+  <include layout="@layout/toolbar"/>
 
-  <include layout="@layout/progress_bar" />
+  <include layout="@layout/progress_bar"/>
 
-  <include layout="@layout/error_view" />
+  <include
+    android:id="@+id/include_error_view"
+    layout="@layout/error_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 
   <LinearLayout
     android:id="@+id/content"
@@ -28,7 +32,7 @@
       android:layout_height="wrap_content"
       android:layout_marginTop="@dimen/activity_vertical_margin"
       android:layout_gravity="center_horizontal"
-      tools:text="@string/tools_text_title" />
+      tools:text="@string/tools_text_title"/>
 
     <TextView
       android:id="@+id/my_body"
@@ -40,7 +44,7 @@
       android:paddingLeft="@dimen/activity_horizontal_margin"
       android:paddingRight="@dimen/activity_horizontal_margin"
       android:scrollbars="vertical"
-      tools:text="@string/tools_text_body" />
+      tools:text="@string/tools_text_body"/>
 
   </LinearLayout>
 
