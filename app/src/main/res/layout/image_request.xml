@@ -1,19 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-
-  <include layout="@layout/toolbar" />
-
-  <de.hdodenhof.circleimageview.CircleImageView
-    android:id="@+id/circularImageView"
+  <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="32dp"
-    android:layout_gravity="center"
-    android:src="@drawable/bumblebee"
-    tools:ignore="ContentDescription" />
+    android:layout_height="match_parent">
 
-</merge>
+    <include layout="@layout/toolbar"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+      android:id="@+id/image"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_margin="32dp"
+      android:src="@drawable/bumblebee"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHeight_max="280dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_max="280dp"
+      tools:ignore="ContentDescription"/>
+
+  </android.support.constraint.ConstraintLayout>
+
+</layout>
+

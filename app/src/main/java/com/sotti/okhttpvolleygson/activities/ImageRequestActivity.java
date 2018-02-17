@@ -1,5 +1,6 @@
 package com.sotti.okhttpvolleygson.activities;
 
+import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,36 +11,29 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.sotti.okhttpvolleygson.R;
 import com.sotti.okhttpvolleygson.base.App;
-import de.hdodenhof.circleimageview.CircleImageView;
+import com.sotti.okhttpvolleygson.databinding.ImageRequestBinding;
 
 public class ImageRequestActivity extends AppCompatActivity {
 
   private final static String sIMAGE_URL = "https://goo.gl/XOXAXG";
+  private ImageRequestBinding mViewBinding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.image_request);
-    init();
-  }
-
-  private void init() {
+    mViewBinding = DataBindingUtil.setContentView(this, R.layout.image_request);
     setUpToolbar();
     performRequest();
   }
 
   private void setUpToolbar() {
     setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-
     if (getSupportActionBar() != null) {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
   }
 
   private void performRequest() {
-    final CircleImageView circleImageView =
-        (CircleImageView) findViewById(R.id.circularImageView);
-
     final ImageRequest imageRequest =
         new ImageRequest
             (
@@ -47,7 +41,7 @@ public class ImageRequestActivity extends AppCompatActivity {
                 new Response.Listener<Bitmap>() {
                   @Override
                   public void onResponse(Bitmap bitmap) {
-                    circleImageView.setImageBitmap(bitmap);
+                    mViewBinding.image.setImageBitmap(bitmap);
                   }
                 },
                 0,
@@ -56,7 +50,7 @@ public class ImageRequestActivity extends AppCompatActivity {
                 Bitmap.Config.ARGB_8888,
                 new Response.ErrorListener() {
                   public void onErrorResponse(VolleyError error) {
-                    circleImageView.setImageResource(R.drawable.image_cloud_sad);
+                    mViewBinding.image.setImageResource(R.drawable.image_cloud_sad);
                   }
                 }
             );
