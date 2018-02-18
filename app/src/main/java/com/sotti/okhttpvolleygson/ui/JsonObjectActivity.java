@@ -2,7 +2,6 @@ package com.sotti.okhttpvolleygson.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.android.volley.Response;
@@ -42,7 +41,6 @@ public class JsonObjectActivity extends AppCompatActivity {
                 new Response.Listener<DummyObject>() {
                   @Override
                   public void onResponse(DummyObject dummyObject) {
-                    // Deal with the DummyObject here
                     onApiResponse(dummyObject);
                   }
                 }
@@ -50,7 +48,6 @@ public class JsonObjectActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                   @Override
                   public void onErrorResponse(VolleyError error) {
-                    // Deal with the error here
                     onApiError();
                   }
                 }
@@ -62,17 +59,13 @@ public class JsonObjectActivity extends AppCompatActivity {
     mViewBinding.includeProgressBar.setVisibility(View.GONE);
     mViewBinding.includeErrorView.setVisibility(View.GONE);
     mViewBinding.content.setVisibility(View.VISIBLE);
-    setData(dummyObject);
+    mViewBinding.myTitle.setText(dummyObject.getTitle());
+    mViewBinding.myBody.setText(dummyObject.getBody());
   }
 
   private void onApiError() {
     mViewBinding.includeProgressBar.setVisibility(View.GONE);
     mViewBinding.includeErrorView.setVisibility(View.VISIBLE);
-  }
-
-  private void setData(@NonNull final DummyObject dummyObject) {
-    mViewBinding.myTitle.setText(dummyObject.getTitle());
-    mViewBinding.myBody.setText(dummyObject.getBody());
   }
 
   @Override
