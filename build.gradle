@@ -28,7 +28,6 @@ ext {
     minSdkVersion = 16
     targetSdkVersion = 27
     compileSdkVersion = 27
-    buildToolsVersion = '27.0.3'
     gsonVersion = "2.8.2"
     volleyVersion = "1.0.0"
     okHttpVersion = "3.9.1"
