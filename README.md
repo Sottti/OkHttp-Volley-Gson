@@ -13,12 +13,6 @@ The app uses Volley as the request queue and UI-facing request API, swaps in a
 custom OkHttp-backed `HttpStack` as the transport layer, and parses JSON
 responses with reusable Gson request classes.
 
-## Preview Assets
-
-| Image Request Sample | RecyclerView Sample Image |
-| --- | --- |
-| <img width="260" alt="Yoda sample image" src="app/src/main/res/drawable-nodpi/yoda.jpg" /> | <img width="260" alt="Bumblebee sample image" src="app/src/main/res/drawable-nodpi/bumblebee.jpg" /> |
-
 ## What It Demonstrates
 
 - A Volley `RequestQueue` backed by `OkHttp3Stack`.
