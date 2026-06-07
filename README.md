@@ -13,7 +13,7 @@ The app uses Volley as the request queue and UI-facing request API, swaps in a
 custom OkHttp-backed `HttpStack` as the transport layer, and parses JSON
 responses with reusable Gson request classes.
 
-## What It Demonstrates
+## ✨ What It Demonstrates
 
 - A Volley `RequestQueue` backed by `OkHttp3Stack`.
 - Generic `GsonGetRequest<T>` and `GsonPostRequest<T>` implementations.
@@ -25,7 +25,7 @@ responses with reusable Gson request classes.
 - An `LruBitmapCache` sized from the device display.
 - Data Binding for simple click handlers and screen bindings.
 
-## Demo Screens
+## 🖼️ Demo Screens
 
 | Screen | What It Shows |
 | --- | --- |
@@ -34,32 +34,7 @@ responses with reusable Gson request classes.
 | `NetworkImageViewActivity` | Load a list of remote images through Volley image loading. |
 | `ImageRequestActivity` | Load one bitmap through `ImageRequest` with an error fallback. |
 
-## Request Flow
-
-```mermaid
-flowchart LR
-    A["Activity"] --> B["ApiRequests"]
-    B --> C["GsonGetRequest / GsonPostRequest"]
-    C --> D["Volley RequestQueue"]
-    D --> E["OkHttp3Stack"]
-    E --> F["Network"]
-    F --> G["Gson model"]
-    G --> H["UI state"]
-```
-
-## Project Shape
-
-| Area | Files |
-| --- | --- |
-| App/request queue | `App.java` |
-| Request definitions | `ApiRequests.java` |
-| Gson requests | `GsonGetRequest.java`, `GsonPostRequest.java` |
-| OkHttp bridge | `OkHttp3Stack.java` |
-| Models | `DummyObject.java`, `DummyObjectDeserializer.java` |
-| Image loading | `LruBitmapCache.java`, `NetworkImageViewActivity.java`, `ImageRequestActivity.java` |
-| UI launcher | `MainActivity.java` |
-
-## Tech Stack
+## ⚙️ Tech Stack
 
 - Java
 - Android Gradle Plugin 3.0.1
@@ -72,7 +47,7 @@ flowchart LR
 - Data Binding
 - RecyclerView and ConstraintLayout
 
-## Run It
+## 🚀 Run It
 
 This repo is pinned to 2018 Android tooling. For the least friction, use an
 Android Studio/JDK setup compatible with AGP 3.0.1 and Gradle 4.5.1.
@@ -86,13 +61,22 @@ The sample uses old public demo endpoints and image URLs. If any network call no
 longer responds, the app still remains useful as a reference for the request,
 transport, parsing, caching, and cancellation patterns.
 
-## Status
+## 🧪 Verification
+
+No automated test suite is included in this historical sample. The practical
+sanity check is to build the debug app:
+
+```bash
+./gradlew :app:assembleLiveDebug
+```
+
+## 📌 Status
 
 This is a historical sample for an old Android networking article series, not a
 modern networking template. Its value today is as a compact reference for how
 Volley, OkHttp, and Gson can be wired together in a pre-AndroidX Java app.
 
-## License
+## 📜 License
 
 The original README declared this repository to be MIT licensed. A standalone
 `LICENSE` file is not currently present in the repository.
