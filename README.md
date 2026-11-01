@@ -1,10 +1,14 @@
 # Android Networking I: OkHttp, Volley and Gson
 
+> **Article companion — inactive.** This repository contains the sample code for
+> [Android Networking I: OkHttp, Volley and Gson](https://medium.com/android-news/android-networking-i-okhttp-volley-and-gson-72004efff196) on Medium.
+> It is preserved for reference and is not under active development.
+
 ![Java](https://img.shields.io/badge/Java-Android-007396?logo=openjdk&logoColor=white)
 ![OkHttp](https://img.shields.io/badge/OkHttp-3.9.1-3E4348)
 ![Volley](https://img.shields.io/badge/Volley-1.0.0-4285F4)
 ![Gson](https://img.shields.io/badge/Gson-2.8.2-FFB000)
-![Status](https://img.shields.io/badge/status-historical%20sample-FFB000)
+![Status](https://img.shields.io/badge/status-inactive%20article%20companion-FFB000)
 
 A Java Android sample showing how to combine Volley, OkHttp, and Gson in one
 small networking playground.
