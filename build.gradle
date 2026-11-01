@@ -29,7 +29,7 @@ ext {
     targetSdkVersion = 27
     compileSdkVersion = 27
     gsonVersion = "2.8.2"
-    volleyVersion = "1.0.0"
+    volleyVersion = "1.1.0"
     okHttpVersion = "3.9.1"
     supportLibraryVersion = "27.0.2"
     circleImageViewVersion = "2.2.0"
